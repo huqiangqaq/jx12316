@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/white_gray"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/agricultural_capital_green"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        android:text="01"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<LinearLayout
+    android:layout_marginTop="8dp"
+    android:gravity="center_vertical"
+    android:layout_marginLeft="8dp"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:paddingLeft="8dp"
+        android:textColor="@color/black"
+        android:text="01"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/tv_pesticide_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:paddingLeft="8dp"
+        android:paddingTop="5dp"
+        android:textColor="@android:color/darker_gray"
+        android:text="01"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:id="@+id/tv_pesticide_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:paddingLeft="8dp"
+        android:paddingTop="5dp"
+        android:textColor="@android:color/darker_gray"
+        android:text="01"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:id="@+id/tv_pesticide_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nxt.ott.activity.doctor.DoctorMenuActivity"
+    android:background="@color/common_bg">
+    <include layout="@layout/common_title"/>
+    <!--在线自我诊断-->
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:id="@+id/ll_zwzd"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/menu_zwzd"/>
+
+        <TextView
+            android:id="@+id/tv_myaccount"
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="在线自主诊断"
+            android:textColor="@color/text_black"/>
+
+    </LinearLayout>
+
+    <!--病虫害图谱-->
+    <LinearLayout
+        android:id="@+id/ll_bch"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/menu_bch"/>
+
+        <TextView
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="病虫害图谱"
+            android:textColor="@color/text_black"/>
+
+    </LinearLayout>
+</LinearLayout>

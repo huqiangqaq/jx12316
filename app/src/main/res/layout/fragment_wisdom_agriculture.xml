@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_bg"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/person_center_top_bg"/>
+
+    <!--一云-->
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:id="@+id/layout_wisdom_cloud"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/wisdom_cloud_one"/>
+
+        <TextView
+            android:id="@+id/tv_myaccount"
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="@string/wisdom_cloud"
+            android:textColor="@color/text_black"/>
+
+    </LinearLayout>
+
+    <!--两中心-->
+    <LinearLayout
+        android:id="@+id/layout_wisdom_center"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/wisdom_center_two"/>
+
+        <TextView
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="@string/wisdom_center"
+            android:textColor="@color/text_black"/>
+
+    </LinearLayout>
+
+    <!--三平台-->
+    <LinearLayout
+        android:id="@+id/layout_wisdom_platform"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/wisdom_platform_three"/>
+
+        <TextView
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="@string/wisdom_platform"
+            android:textColor="@color/text_black"/>
+
+    </LinearLayout>
+
+    <!--N系统-->
+    <LinearLayout
+        android:id="@+id/layout_wisdom_system"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/wisdom_system_n"/>
+
+        <TextView
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="@string/wisdom_system"
+            android:textColor="@color/text_black"/>
+
+    </LinearLayout>
+</LinearLayout>

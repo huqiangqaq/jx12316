@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nxt.ott.expertUpdate.ExpertRecommedActivity">
+    <include layout="@layout/common_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/lightgrey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+                <!--<ImageView-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="90dp"-->
+                <!--android:src="@mipmap/icon_tj"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_centerHorizontal="true" />-->
+                <com.nxt.ott.view.ProcessSuccessView
+                    android:id="@+id/success"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    app:arcColor="#1c75ce"
+                    app:arcWidth="3dp"
+                    app:isShowTriAngle="hidden"
+                    app:rightColor="@color/white"
+                    app:rightWidth="3dp"
+                    app:scale="0.7" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawablePadding="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:background="@null"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/iv_main"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/icon_fhsy" />
+
+                <ImageButton
+                    android:adjustViewBounds="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:id="@+id/tv_kind"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/icon_fl" />
+                <ImageButton
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:id="@+id/tv_search"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/icon_sszj" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="推荐专家"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="@color/black" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ry_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/vp_experter"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="120dp"-->
+            <!--android:flipInterval="30"-->
+            <!--android:persistentDrawingCache="animation">-->
+            <!--</android.support.v4.view.ViewPager>-->
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"></FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/PhotoPicker" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/app" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/carmeralibrary" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/cptr" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/easeui" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/highlight" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/jcvideoplayer-lib" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/zlibrary" vcs="svn" />
+  </component>
+</project>

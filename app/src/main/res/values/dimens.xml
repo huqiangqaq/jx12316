@@ -1,0 +1,26 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_title_height">56dp</dimen>
+    <dimen name="activity_title_size">20sp</dimen>
+
+    <!-- The primary text size -->
+    <!-- The primary text size -->
+    <!-- The ccp button text size -->
+    <!-- The title large text size -->
+    <dimen name="standard_padding">8dip</dimen>
+    <dimen name="half_padding">4dip</dimen>
+    <!-- The ccp item space -->
+    <!-- the mode developer or experience desc space -->
+    <!-- The primary margin space -->
+    <!-- The notice status bar height size -->
+    <!-- The secondary margin space -->
+    <!-- The ccp icon text or edit height -->
+    <dimen name="actionBarSize">44dip</dimen>
+
+    <dimen name="alert_width">290dp</dimen>
+    <dimen name="common_circle_width">3dp</dimen>
+    <dimen name="progress_circle_radius">34dp</dimen>
+
+</resources>

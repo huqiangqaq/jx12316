@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/calcel"
+        android:layout_gravity="right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/close_update"/>
+    <TextView
+        android:id="@+id/version_tip_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:gravity="center"
+        android:text="1.5版本发布"
+        android:textColor="@color/color_main"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/version_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="专家咨询系统全新改版"
+        android:textColor="@color/color_main" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <Button
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/submit_button"
+        style="@style/dialog_blue_button"
+        android:text="立即更新"/>
+
+</LinearLayout>

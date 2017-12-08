@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@color/common_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="【热点咨询】"
+            android:textColor="@color/redbg"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_answer_item_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="如何防治稻瘟病?"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        android:lineSpacingMultiplier="1.2"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/tv_answer_item_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="答:hklhkhugigbggtigblholyhulgfgklgryuiuyglghuigliguygjlfjaljdfaidfnaonfdanfnaonfioadfnnf;adnfln;aknoiandnif;ofn;ansdf;oia;fodnifa;ino;andf;fi;ionwnfn;anfd;nfa;nioaofia;nfdn;oa"
+        android:textColor="#4477db"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

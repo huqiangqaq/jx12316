@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_hot_experter"
+    android:padding="@dimen/dp_10"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginBottom="5dp">
+    <com.nxt.zyl.ui.widget.roundedimageview.CustomImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:id="@+id/iv_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+    <LinearLayout
+        android:layout_marginLeft="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/name"
+            android:padding="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="中韩"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/zhiwu"
+            android:padding="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="职务:高级农艺师"
+            android:textColor="@color/red"/>
+        <TextView
+            android:id="@+id/proffessional"
+            android:padding="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="专长:土壤肥料" />
+    </LinearLayout>
+    <!--<TextView-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:textColor="@color/commo_text_color"-->
+        <!--android:id="@+id/name"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_below="@id/iv_avatar"-->
+        <!--android:text="钟志华"-->
+        <!--android:textSize="14sp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+</LinearLayout>

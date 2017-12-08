@@ -1,0 +1,1 @@
+include ':app', ':zlibrary', ':carmeralibrary', ':cptr', ':jcvideoplayer-lib', ':PhotoPicker', ':highlight', ':easeui'

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_left"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <!--顶部UI-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@mipmap/mine_top_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--等级-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:padding="8dp"
+            android:src="@mipmap/mine_level"
+            android:visibility="gone" />
+        <RelativeLayout
+            android:id="@+id/ll_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+
+            <!--头像-->
+            <com.nxt.zyl.ui.widget.roundedimageview.CustomImageView
+                android:id="@+id/iv_user_photo"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerVertical="true" />
+
+            <!--姓名-->
+            <TextView
+                android:id="@+id/tv_user_name"
+                style="@style/commontext"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@id/iv_user_photo"
+                android:text="admin"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="64dp"
+                android:layout_toRightOf="@+id/tv_user_name"
+                android:src="@mipmap/mine_ewm"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="“江西12316,您的生活好帮手。”"
+            android:textColor="@color/common_bg"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!--功能列表-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/common_bg"
+            android:orientation="vertical"
+            android:paddingTop="1dp">
+
+            <!--待定-->
+            <TextView
+                android:id="@+id/tv_mine_dynamic"
+                style="@style/my_center_tv"
+                android:drawableLeft="@mipmap/mine_dynamic"
+                android:text="我的动态"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_mine_collection"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_recommend" />
+
+                <TextView
+                    android:id="@+id/tv_myaccount"
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="资料完善"
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_mine_clear_cache"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_theme" />
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="清理缓存"
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_mine_update"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_update" />
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="检测更新"
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_mine_feed_back"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_feed_back" />
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="意见反馈"
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_mine_about"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_about" />
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="关于我们"
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_mine_share"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_post" />
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="分享好友"
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_mine_recommend"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_chat" />
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="推荐应用"
+                    android:textColor="@color/text_black" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_mine_guide"
+                    style="@style/mine_ll">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/icon_recommend" />
+
+                    <TextView
+                        style="@style/commontext"
+                        android:layout_marginLeft="8dp"
+                        android:text="开启向导"
+                        android:textColor="@color/text_black" />
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/sw_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/em_btn_style_alert_dialog_special"
+                    android:text="@string/logout"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <!--<LinearLayout-->
+            <!--android:id="@+id/ll_mine_set"-->
+            <!--style="@style/mine_ll">-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:src="@drawable/icon_set"/>-->
+
+            <!--<TextView-->
+            <!--style="@style/commontext"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:text="设置"-->
+            <!--android:textColor="@color/text_black"/>-->
+            <!--</LinearLayout>-->
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

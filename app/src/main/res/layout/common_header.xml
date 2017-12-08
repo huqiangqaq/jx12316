@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/common_bg"
+              android:orientation="vertical"
+              android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/rbt_step_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/header_step_one_selected"
+            android:button="@null"
+            android:checked="true"
+            android:clickable="false"/>
+
+        <CheckBox
+            android:id="@+id/rbt_step_two"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/header_step_two_selected"
+            android:button="@null"
+            android:clickable="false"/>
+
+        <CheckBox
+            android:id="@+id/rbt_step_three"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/header_step_three_selected"
+            android:button="@null"
+            android:clickable="false"/>
+
+        <CheckBox
+            android:id="@+id/rbt_step_four"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/header_step_four_selected"
+            android:button="@null"
+            android:clickable="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/rbt_text_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/diseate_type"
+            android:textColor="@color/header_color_select"
+            android:textSize="18sp"/>
+
+        <CheckBox
+            android:id="@+id/rbt_text_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/disease_choose"
+            android:textColor="@color/header_color_select"
+            android:textSize="18sp"
+            />
+
+        <CheckBox
+            android:id="@+id/rbt_text_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/picture_choose"
+            android:textColor="@color/header_color_select"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/rbt_text_four"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/result_search"
+            android:textColor="@color/header_color_select"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</LinearLayout>

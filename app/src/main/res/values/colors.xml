@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_bg">#F0F0F0</color>
+
+    <color name="commo_text_color">#ff333333</color>
+    <color name="griditems_bg">#ffe8ecef</color>
+    <color name="line">#dddddd</color>
+
+    <color name="green_text_dark">#398F43</color>
+    <color name="agricultural_capital_green_pressed">#AA45BC62</color>
+    <color name="agricultural_capital_blue_pressed">#067A88</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="pressed_color">#D0D0D0</color>
+    <color name="black">#000000</color>
+    <color name="text_black">#0C0C0C</color>
+    <color name="title_color">#067ADD</color>
+    <color name="title_color_pressed">#067A99</color>
+    <color name="mine_color">#1F8FDB</color>
+    <color name="darkgray">@android:color/darker_gray</color>
+    <color name="home_shop_blue">#2E8AD7</color>
+    <color name="main_bg">#eee</color>
+    <color name="nav_text_color">#FF9c9c9c</color>
+
+    <color name="home_scan_pink">#E96D6B</color>
+    <color name="home_scan_pink_pressed">#99E96D6B</color>
+
+    <color name="home_wlw_yellew">#F4C600</color>
+
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="transparent">#00ffffff</color>
+
+    <color name="contents_text">#ff000000</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="agricultural_capital_green">#45BC62</color>
+    <color name="agricultural_capital_blue">#067ADD</color>
+    <color name="agricultural_capital_slide_gray">#8893A3</color>
+
+    <color name="gray_white">#efefef</color>
+
+    <color name="gray">#737172</color>
+
+    <color name="redbg">#cc0000</color>
+    <color name="gray_light">#ecf0f3</color>
+    <color name="color_e3ae57">#2e99f0</color>
+
+    <color name="mintcream">#F5FFFA</color><!--薄荷色 -->
+    <color name="steelblue">#4682B4</color><!--钢兰色 -->
+    <color name="spots_dialog_color">@android:color/holo_orange_dark</color>
+
+    <color name="drop_down_selected">#7B1FA2</color>
+    <color name="drop_down_unselected">#111111</color>
+
+    <color name="mask_color">#88888888</color>
+    <color name="check_bg">#f2f2f2</color>
+    <color name="un_press_color">#9C27B0</color>
+    <!--水波纹或5.0以下选择器颜色-->
+    <!--item的水波纹颜色-->
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="color_main">#2e99f0</color>
+    <color name="color_expert_main">#f9e2be</color>
+    <color name="colorPrimary">#5677fc</color>
+    <color name="colorPrimaryDark">#3b50ce</color>
+
+    <color name="float_transparent">#00000000</color>
+    <color name="sweet_dialog_bg_color">#FFFFFF</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="blue_btn_bg_color">#AEDEF4</color>
+    <color name="blue_btn_bg_pressed_color">#96BFD2</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="error_stroke_color">#F27474</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="warning_stroke_color">#F8BB86</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="btn_white_normal">#f7f8f8</color>
+    <color name="btn_white_pressed">#b5b5b6</color>
+    <color name="btn_green_noraml">#68C270</color>
+    <color name="btn_login_pressed">#46678d</color>
+    <color name="common_botton_bar_blue">#2ea7e0</color>
+    <color name="top_bar_normal_bg">#067ADD</color>
+    <color name="gray_pressed">#b5b5b6</color>
+    <color name="expeter_title">#2b5e93</color>
+    <color name="status_y">#ff7800</color>
+    <color name="status_n">#12aaeb</color>
+    <color name="experter_main">#169A68</color>
+    <color name="_6">#666666</color>
+    <color name="a5">#A5A5A5</color>
+    <color name="hot_pink">#FD4C5B</color><!-- Acfun主题色 -->
+    <color name="_8c">#8c8c8c</color>
+</resources>

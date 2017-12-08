@@ -1,0 +1,96 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+version = "3.0.1"
+android {
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
+    resourcePrefix "hybridsquad_"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 16
+        versionName version
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+def siteUrl = 'https://github.com/ryanhoo/PhotoCropper'
+def gitUrl = 'https://github.com/ryanhoo/PhotoCropper.git'
+def intro = 'The Ultimate Approach to crop photos on android devices, especially for large size photos. This way can help you avoid OOM(OutOfMemory) exception.'
+group = "org.hybridsquad.android.photocropper"
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            //noinspection GroovyAssignabilityCheck
+            project {
+                packaging 'aar'
+                // Add your description here
+                name intro
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name 'MIT'
+                        url 'http://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'ryanhoo'
+                        name 'Ryan Hoo'
+                        email 'ryan.hoo.j@gmail.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "PhotoCropper"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["MIT"]
+        publish = true
+    }
+}

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+    <RelativeLayout
+        android:id="@+id/layout_parent"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@mipmap/agricultural_capital_bg">
+        <RelativeLayout
+            android:id="@+id/mLyout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:clipChildren="true"
+            />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rt_pesticide"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/circle_green_bg"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/pesticide"
+                android:textColor="@color/agricultural_capital_text" />
+
+            <RadioButton
+                android:id="@+id/rt_fertilizer"
+
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="23dp"
+                android:background="@drawable/circle_green_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/fertilizer"
+                android:textColor="@color/agricultural_capital_text" />
+
+            <RadioButton
+                android:id="@+id/rt_seed"
+
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="23dp"
+                android:background="@drawable/circle_green_bg"
+
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/seed"
+                android:textColor="@color/agricultural_capital_text" />
+
+            <RadioButton
+                android:id="@+id/rt_microorganism"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="23dp"
+                android:background="@drawable/circle_green_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/microorganism"
+                android:textColor="@color/agricultural_capital_text" />
+
+
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/img_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/top_icon"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="23dp">
+
+                <ImageView
+                    android:id="@+id/img_two"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/top_icon" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="23dp">
+
+                <ImageView
+                    android:id="@+id/img_three"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/top_icon" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="23dp">
+
+                <ImageView
+                    android:id="@+id/img_four"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/top_icon" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RadioGroup
+        android:orientation="horizontal"
+        android:layout_margin="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:padding="8dp"
+            android:gravity="center"
+
+            android:text="@string/by_company"
+            android:textColor="@color/agricultural_capital_text"
+            android:button="@null"
+            android:checked="true"
+            android:background="@drawable/case_radio_left_selector"
+            android:id="@+id/rbt_one"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:gravity="center"
+            android:padding="8dp"
+
+            android:text="@string/by_card_number"
+            android:button="@null"
+            android:textColor="@color/agricultural_capital_text"
+            android:background="@drawable/case_radio_selector"
+            android:id="@+id/rbt_two"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:text="@string/by_ingredient"
+            android:gravity="center"
+            android:padding="8dp"
+
+            android:textColor="@color/agricultural_capital_text"
+            android:button="@null"
+            android:checked="true"
+            android:background="@drawable/case_radio_selector"
+            android:id="@+id/rbt_three"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:padding="8dp"
+
+            android:gravity="center"
+            android:text="@string/by_crop"
+            android:button="@null"
+            android:textColor="@color/agricultural_capital_text"
+            android:background="@drawable/case_radio_right_selector"
+            android:id="@+id/rbt_four"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+    </RadioGroup>
+    <EditText
+        android:id="@+id/et_search"
+        android:paddingLeft="8dp"
+        android:background="@drawable/agricultural_capital_et_bg"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="38dp" />
+
+    <Button
+        android:layout_marginTop="28dp"
+        android:background="@drawable/agricultural_capital_btn_bg"
+        android:textColor="@color/white"
+        android:text="@string/search"
+        android:gravity="center"
+        android:id="@+id/btn_search"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_width="match_parent"
+        android:layout_height="38dp" />
+
+</LinearLayout>
+

@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_bg"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:id="@+id/id_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--&lt;!&ndash;//viewpager导航&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:id="@+id/layout_main_viewpager"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical" />-->
+            <!--快速提问-->
+            <RelativeLayout
+                android:id="@+id/rl_quick"
+                android:clickable="true"
+                android:background="@drawable/selector_common_layout"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <ImageView
+                    android:id="@+id/iv_wenhao"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/wenhao"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp"/>
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow"
+                    android:layout_marginRight="15dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/iv_wenhao"
+                    android:layout_toLeftOf="@id/iv_arrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="快速提问"
+                            android:textColor="@color/black"
+                            android:layout_alignParentBottom="true"
+                            android:textSize="@dimen/sp_16"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_marginTop="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="专业专家解决问题"
+                            android:textSize="@dimen/sp_14"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line"/>
+
+            <!--找专家-->
+            <RelativeLayout
+                android:id="@+id/rl_find"
+                android:background="@drawable/selector_common_layout"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <ImageView
+                    android:id="@+id/iv_wenhao2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/find"
+                    android:padding="5dp"
+                    android:layout_marginLeft="10dp" />
+                <ImageView
+                    android:id="@+id/iv_arrow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow"
+                    android:layout_marginRight="15dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/iv_wenhao2"
+                    android:layout_toLeftOf="@id/iv_arrow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="找专家"
+                            android:textColor="@color/black"
+                            android:layout_alignParentBottom="true"
+                            android:textSize="@dimen/sp_16"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_marginTop="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="找准专家,对症下药"
+                            android:textSize="@dimen/sp_14"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/common_bg" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/banner"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ViewFlipper
+                        android:id="@+id/viewFilpper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/weather_img_update"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2">
+
+                                <TextView
+                                    android:id="@+id/weatheer_update"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_marginRight="5dp"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:id="@+id/weather_tem_update"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_marginLeft="5dp"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/weather_img_update2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2">
+
+                                <TextView
+                                    android:id="@+id/weatheer_update2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_marginRight="5dp"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5">
+
+                                <TextView
+                                    android:id="@+id/weather_tem_update2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </ViewFlipper>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="1dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/line" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:text="农事提醒:"
+                        android:textColor="@color/red"
+                        android:textSize="14sp"
+                        android:id="@+id/textView4" />
+
+                    <TextView
+                        android:id="@+id/tv_experter_suggest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/home_expert_ask1"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@mipmap/icon_zjzx" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_answer_more"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@mipmap/icon_rdhb" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<View-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="8dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="#acdedf" />-->
+
+                <!--<View-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="8dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="#7fd45f" />-->
+
+            <!--</LinearLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:adjustViewBounds="true"
+                        android:id="@+id/ll_experts"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/ndf"
+                        android:background="@null"
+                        android:scaleType="fitXY">
+                    </ImageButton>
+
+                    <ImageButton
+                        android:adjustViewBounds="true"
+                        android:id="@+id/tv_county_play"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/broadcast"
+                        android:background="@null"
+                        android:scaleType="fitXY">
+                    </ImageButton>
+
+                    <!--<ImageButton-->
+                        <!--android:adjustViewBounds="true"-->
+                        <!--android:id="@+id/ll_bch"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:src="@drawable/tupu"-->
+                        <!--android:background="@null"-->
+                        <!--android:scaleType="fitXY">-->
+                    <!--</ImageButton>-->
+
+
+                    <!--农业气象-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@mipmap/bg_weather"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingLeft="10dp">
+
+                                <TextView
+                                    android:id="@+id/tv_home_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="3"
+                                    android:drawablePadding="6dp"
+                                    android:drawableRight="@mipmap/location"
+                                    android:gravity="center"
+                                    android:text="南昌"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_home_weather"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="1"
+                                    android:text="小雨西北风"
+                                    android:textSize="14sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_agriculture_weather"
+                                android:layout_width="0dp"
+                                android:layout_height="70dp"
+                                android:layout_weight="2"
+                                android:gravity="right"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/img_weather"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="3"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/test" />
+
+                                <TextView
+                                    android:id="@+id/tv_home_temperature"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="20℃" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:adjustViewBounds="true"
+                        android:id="@+id/ib_soil"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/soil"
+                        android:background="@null"
+                        android:scaleType="fitXY">
+                    </ImageButton>
+
+                    <ImageButton
+                        android:adjustViewBounds="true"
+                        android:id="@+id/ib_scan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/scan"
+                        android:background="@null"
+                        android:scaleType="fitXY">
+                    </ImageButton>
+                </LinearLayout>
+
+                <!--<View-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/home_shop_blue" />-->
+
+
+                <!--<ImageView-->
+                <!--android:id="@+id/home_expert_ask"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@mipmap/img_expert_ask" />-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@color/common_bg" />
+                <!--活跃专家-->
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:background="@color/white">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="5dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:background="@color/color_main"/>-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentLeft="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:text="今日活跃专家"-->
+                        <!--android:textSize="14sp"-->
+                        <!--android:textColor="@color/black"/>-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginRight="@dimen/dp_10"-->
+                        <!--android:background="@null"-->
+                        <!--android:src="@drawable/more" />-->
+                <!--</RelativeLayout>-->
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/line"/>-->
+
+                    <!--<android.support.v7.widget.RecyclerView-->
+                        <!--android:id="@+id/hot"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+                    <!--</android.support.v7.widget.RecyclerView>-->
+                <!--热点咨询-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:background="@color/white">
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_main"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="热点咨询"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:text="更多"
+                        android:drawableRight="@drawable/more"
+                        android:drawablePadding="3dp"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_redian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+
+                <!--第一行-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--&lt;!&ndash;益农社&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_agriculture_msg"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="5dp"-->
+                            <!--android:drawableTop="@mipmap/icon_01"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/yns"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--&lt;!&ndash;农资讯&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_wlw"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="5dp"-->
+                            <!--android:drawableTop="@mipmap/icon_05"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/agriculture_msg"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp"-->
+                            <!--android:id="@+id/textView9" />-->
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash;市场供求&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_product_scan"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="5dp"-->
+                            <!--android:drawableTop="@mipmap/icon_06"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/agriculture_supply"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp"-->
+                            <!--android:id="@+id/textView7" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--&lt;!&ndash;赣农宝&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_gnb"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="5dp"-->
+                            <!--android:drawableTop="@mipmap/icon_02"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/gnb"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp" />-->
+                    <!--</LinearLayout>-->
+
+                <!--</LinearLayout>-->
+                <!--&lt;!&ndash;第二行&ndash;&gt;-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="horizontal">-->
+
+
+                    <!--&lt;!&ndash;配方施肥&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_farmer_lesson"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="10dp"-->
+                            <!--android:drawableTop="@mipmap/icon_04"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/soil_testing_formula"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--&lt;!&ndash;产品追溯&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_soil_testing_formula"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="10dp"-->
+                            <!--android:drawableTop="@mipmap/icon_07"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/production_scan"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp" />-->
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash;物联网&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_yns"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/textView2"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="10dp"-->
+                            <!--android:drawableTop="@mipmap/home_wlw_img"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/wlw"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp" />-->
+
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash;物联网&ndash;&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/tv_more"-->
+                        <!--style="@style/padding_1"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@drawable/common_click_bg">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:drawablePadding="10dp"-->
+                            <!--android:drawableTop="@mipmap/icon_more"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="更多"-->
+                            <!--android:textColor="@color/text_black"-->
+                            <!--android:textSize="15sp" />-->
+                    <!--</LinearLayout>-->
+                <!--</LinearLayout>-->
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.nxt.zyl.ui.widget.AVLoadingIndicatorView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible"
+            app:indicator="LineScale"
+            app:indicator_color="@color/home_wlw_yellew" />
+    </RelativeLayout>
+
+</ScrollView>
+
+
+

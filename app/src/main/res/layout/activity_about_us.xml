@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_bg" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <RelativeLayout
+                android:id="@+id/layout_about_us"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/input_edit_backgroud"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp" >
+
+                <TextView
+                    android:id="@+id/tv_about_platform"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="all"
+                    android:padding="8dp"
+                    android:text="@string/platform_info"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_about_platform"
+                    android:background="@color/main_bg" />
+
+                <TextView
+                    android:id="@+id/tv_about_cpt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_about_platform"
+                    android:padding="8dp"
+                    android:text="@string/cpt_info"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_about_cpt"
+                    android:background="@color/main_bg" />
+
+                <TextView
+                    android:id="@+id/tv_consulting_services"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line2"
+                    android:padding="8dp"
+                    android:text="@string/consulting_services"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_consulting_services"
+                    android:background="@color/main_bg" />
+
+                <TextView
+                    android:id="@+id/tv_speak_complaints"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/speak_complaints"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_alignBaseline="@+id/line3"
+                    android:layout_alignBottom="@+id/line3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/line4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_speak_complaints"
+                    android:background="@color/main_bg" />
+
+                <TextView
+                    android:id="@+id/tv_comp_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="all"
+                    android:padding="8dp"
+                    android:layout_below="@+id/line4"
+                    android:text="@string/comp_info_update"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/line5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_comp_info"
+                    android:background="@color/main_bg" />
+
+                <TextView
+                    android:id="@+id/tv_comp_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line5"
+                    android:autoLink="all"
+                    android:padding="8dp"
+                    android:text="@string/comp_tel"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_comp_tel"
+                    android:background="@color/main_bg" />
+
+                <TextView
+                    android:id="@+id/tv_comp_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line6"
+                    android:autoLink="all"
+                    android:padding="8dp"
+                    android:text="@string/comp_email"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/line7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/tv_comp_email"
+                    android:background="@color/main_bg" />
+
+                <TextView
+                    android:id="@+id/tv_comp_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line7"
+                    android:padding="8dp"
+                    android:text="@string/comp_address_update"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

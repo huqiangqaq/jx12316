@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/ll_ex"
+        android:background="@drawable/experter_item_bg"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.nxt.zyl.ui.widget.roundedimageview.CustomImageView
+            android:id="@+id/img_header"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="4dp"/>
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:id="@+id/tv_experter_introuction_one"
+            style="@style/commontext"
+            android:gravity="center|left"
+            android:lineSpacingExtra="3dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="姓名：\n专长：\n职务\n单位\t\t职务\n单位"
+            android:textColor="@color/text_black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_call_experter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_bg"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_experter_tel"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/button_bdrx02"
+                android:layout_centerInParent="true"
+                android:text="12316热线"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/line"/>
+
+       <RelativeLayout
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1">
+           <TextView
+               android:id="@+id/tv_experter_picture"
+               android:gravity="center_vertical"
+               android:layout_centerInParent="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:drawablePadding="5dp"
+               android:drawableLeft="@mipmap/button_zjzx02"
+               android:text="专家咨询"/>
+       </RelativeLayout>
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/line"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_experter_video"
+                android:gravity="center_vertical"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/videocall"
+                android:text="视频通话"/>
+        </RelativeLayout>
+
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_experter_history"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawablePadding="5dp"-->
+            <!--android:drawableTop="@mipmap/experter_history"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/expert_history"-->
+            <!--android:textColor="@color/text_black" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_experter_tel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawablePadding="5dp"-->
+            <!--android:drawableTop="@mipmap/experter_tel"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/expert_tel"-->
+            <!--android:textColor="@color/text_black" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_experter_msg"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawablePadding="5dp"-->
+            <!--android:drawableTop="@mipmap/experter_msg"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/expert_msg"-->
+            <!--android:textColor="@color/text_black" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_experter_picture"-->
+            <!--android:layout_width="wrap_content"-->
+
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:drawablePadding="5dp"-->
+            <!--android:drawableTop="@mipmap/experter_picture"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/expert_picture"-->
+            <!--android:textColor="@color/text_black" />-->
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff"
+              android:orientation="vertical">
+
+    <include layout="@layout/common_title"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<com.stx.xhb.xbanner.XBanner-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/banner_1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="180dp"-->
+            <!--app:pointsPosition="CENTER"-->
+            <!--app:isAutoPlay="false"-->
+            <!--app:pointsContainerBackground="#44aaaaaa"-->
+            <!--app:pointNormal="@mipmap/point_normal"-->
+            <!--app:pointSelect="@mipmap/point_lighted"/>-->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="@mipmap/icon_to_left"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/icon_to_right"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:paddingTop="12dp"
+        android:paddingLeft="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_pest_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#067ADD"
+        android:textSize="16sp"
+        android:text="病症名称："/>
+
+        <TextView
+            android:id="@+id/tv_pest_name"
+            android:layout_toRightOf="@+id/tv_pest_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_pest_2"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/tv_pest_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#067ADD"
+            android:textSize="16sp"
+            android:text="病症内容："/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tv_pest_content"
+            android:layout_toRightOf="@+id/tv_pest_2"
+            android:layout_below="@+id/tv_pest_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp"
+             />
+    </RelativeLayout>
+</LinearLayout>

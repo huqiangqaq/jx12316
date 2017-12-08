@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <!--<include layout="@layout/common_title" />-->
+
+    <!--<ImageView-->
+        <!--android:adjustViewBounds="true"-->
+        <!--android:src="@mipmap/doctor_top_bg"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+    <com.nxt.ott.view.CustomGridView
+        android:numColumns="2"
+        android:id="@+id/gridview_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_bg"
+              android:orientation="vertical"
+              android:paddingTop="5dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--商城-->
+            <LinearLayout
+                android:id="@+id/layout_mall"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/con_yns_shop"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/mall"
+                    android:textColor="@color/text_black"/>
+
+            </LinearLayout>
+
+            <!--话费充值-->
+            <LinearLayout
+                android:id="@+id/layout_recharge"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/con_yns_tel"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/recharge"
+                    android:textColor="@color/text_black"/>
+
+            </LinearLayout>
+
+            <!--车票购买-->
+            <LinearLayout
+                android:id="@+id/layout_ticket"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/con_yns_ticket"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/ticket"
+                    android:textColor="@color/text_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_waterorele"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/con_yns_waterorele"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/waterorele"
+                    android:textColor="@color/text_black"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_doctor"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/con_yns_doctor"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/see_doctor"
+                    android:textColor="@color/text_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_break_rule"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/con_yns_breakrule"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/break_rule"
+                    android:textColor="@color/text_black"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

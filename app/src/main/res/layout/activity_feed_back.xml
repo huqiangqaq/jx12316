@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+   <include layout="@layout/common_title"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title_color"
+        android:text="您有什么问题或建议想对我们说？"/>
+
+    <EditText
+        android:id="@+id/et_theme"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@drawable/bg_et_feed_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:hint="您的主题："/>
+
+    <EditText
+        android:id="@+id/et_note"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="7"
+        android:background="@drawable/bg_et_feed_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:hint="您的宝贵意见，就是我们进步的源泉"/>
+
+    <EditText
+        android:id="@+id/et_contact"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@drawable/bg_et_feed_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:hint="您的联系方式：手机号/QQ号/邮箱"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/btn_white_pressed"
+        android:text="意见反馈"/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:onClick="submit"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_login_bg"
+        android:padding="3dp"
+        android:text="问题提交"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@android:color/white" />
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    android:paddingTop="5dp">
+
+    <!--扫描追溯二维码-->
+    <LinearLayout
+        android:id="@+id/layout_scan_ewm"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/scan_ewm"/>
+
+        <TextView
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="@string/scan_ewm"
+            android:textColor="@color/text_black"
+            android:textStyle="normal"/>
+
+    </LinearLayout>
+
+    <!--扫描追溯二维码-->
+    <LinearLayout
+        android:id="@+id/layout_write_ewm"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/search_experter"/>
+
+        <TextView
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="@string/write_ewm"
+            android:textColor="@color/text_black"
+            android:textStyle="normal"/>
+
+    </LinearLayout>
+
+    <!--追溯码查询-->
+    <LinearLayout
+        android:id="@+id/layout_pesticide_search"
+        style="@style/mine_ll">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/pesticide_search"/>
+
+        <TextView
+            style="@style/commontext"
+            android:layout_marginLeft="8dp"
+            android:text="@string/pesticide_search"
+            android:textColor="@color/text_black"
+            android:textStyle="normal"/>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <SearchView
+            android:id="@+id/search_expert"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:inputType="text"
+            android:searchIcon="@drawable/search_experter"
+            android:imeOptions="actionSearch"
+            android:queryHint="输入专家搜索"
+            />
+
+        <Spinner
+            android:id="@+id/expert_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:entries="@array/search_type"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_expert"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/common_bg"
+        android:dividerHeight="1dp"/>
+</LinearLayout>

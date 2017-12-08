@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp"
+            android:id="@+id/issueUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="胡强"
+            android:textColor="@color/color_accent"/>
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回复"
+            android:layout_marginLeft="3dp"/>
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp"
+            android:id="@+id/answerUser"
+            android:textColor="@color/color_accent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textSize="14sp"
+            android:id="@+id/content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"/>
+        <Button
+            android:id="@+id/iv_zan"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_gravity="center_vertical"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/selector_zan"/>
+        <Button
+            android:id="@+id/iv_reply"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_gravity="center_vertical"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/selector_zan"/>
+    </LinearLayout>
+    <!--如果评论或回复中有语音或图片,在这里显示-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lv_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/id_recoder_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="3dp"
+                android:text="1'"
+                android:textColor="#ff777777"
+                android:visibility="visible" />
+
+            <View
+                android:id="@+id/id_recoder_anim"
+                android:layout_width="25dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:background="@mipmap/adj"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

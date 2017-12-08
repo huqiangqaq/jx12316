@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_bg"
+              android:orientation="vertical"
+              android:paddingTop="5dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--移动充值-->
+                <LinearLayout
+                    android:id="@+id/layout_phone_bill_mobile"
+                    style="@style/mine_ll">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/con_phone_bill_mobile"/>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        style="@style/commontext"
+                        android:layout_marginLeft="8dp"
+                        android:text="@string/mobile"
+                        android:textColor="@color/text_black"/>
+
+                </LinearLayout>
+
+                <!--联通充值-->
+                <LinearLayout
+                    android:id="@+id/layout_phone_bill_unicom"
+                    style="@style/mine_ll">
+
+                    <ImageView
+                        android:id="@+id/con_phone_bill_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/con_phone_bill_unicom"/>
+
+                    <TextView
+                        style="@style/commontext"
+                        android:layout_marginLeft="8dp"
+                        android:text="@string/unicom"
+                        android:textColor="@color/text_black"/>
+
+                </LinearLayout>
+
+                <!--联通充值-->
+                <LinearLayout
+                    android:id="@+id/layout_phone_bill_telecom"
+                    style="@style/mine_ll">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/con_phone_bill_telecom"/>
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        style="@style/commontext"
+                        android:layout_marginLeft="8dp"
+                        android:text="@string/telecom"
+                        android:textColor="@color/text_black"/>
+
+                </LinearLayout>
+
+                <!--益农充值-->
+                <LinearLayout
+                    android:id="@+id/layout_phone_bill_yns"
+                    style="@style/mine_ll">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/con_pay_yns"/>
+
+                    <TextView
+                        style="@style/commontext"
+                        android:layout_marginLeft="8dp"
+                        android:text="@string/yns_bill"
+                        android:textColor="@color/text_black"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+</LinearLayout>
+
+
+

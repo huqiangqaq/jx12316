@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title" />
+
+    <include layout="@layout/common_header" />
+
+    <RelativeLayout
+
+        android:id="@+id/layout_kind_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingRight="5dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/tv_kind_choose"
+            style="@style/commontext"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/kind_choose"
+            android:textColor="@color/text_black" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:src="@mipmap/right_arrow" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_disease_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingRight="5dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/tv_disease_choose"
+
+            style="@style/commontext"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/diseate_type"
+            android:textColor="@color/text_black" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:src="@mipmap/right_arrow" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="25dp"
+        android:background="@drawable/agricultural_capital_btn_bg"
+        android:text="@string/next"
+        android:textColor="@color/white" />
+
+    <include layout="@layout/activity_common_loading" />
+</LinearLayout>

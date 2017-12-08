@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+    <com.nxt.zyl.ui.widget.AVLoadingIndicatorView
+        android:id="@+id/loading"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:indicator="LineScale"
+        app:indicator_color="@color/home_wlw_yellew"
+        />
+</RelativeLayout>

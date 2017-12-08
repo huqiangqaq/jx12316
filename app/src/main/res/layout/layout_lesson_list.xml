@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="80dp"
+              android:background="@drawable/white_gray"
+              android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/img_video"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_vertical"
+        android:padding="5dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/app_empty_icn"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_video_name"
+            style="@style/commontext"
+            android:maxLines="1"
+            android:text="你好"
+            android:textColor="@color/text_black"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tv_video_time"
+            style="@style/commontext"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/nav_text_color"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_quick"
+        android:clickable="true"
+        android:background="@drawable/selector_common_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/iv_wenhao"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/wenhao"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow"
+            android:layout_marginRight="15dp"/>
+        <LinearLayout
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/iv_wenhao"
+            android:layout_toLeftOf="@id/iv_arrow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="快速提问"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/sp_16"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@mipmap/tag"
+            android:drawablePadding="5dp"
+            android:text="最新问答"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/ib_exper_list"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_reply"
+            android:text="全部问题"
+            android:textSize="12sp"
+            android:textColor="@color/white"/>
+        <ImageButton
+            android:id="@+id/ib_exper_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@mipmap/experter_list"
+            android:scaleType="fitXY"/>
+
+    </RelativeLayout>
+</LinearLayout>
+

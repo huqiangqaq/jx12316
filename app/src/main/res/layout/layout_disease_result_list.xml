@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.nxt.ott.view.RoundedLetterView
+         android:layout_marginTop="8dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/roundview_disease_result"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        tools:visibility="visible"
+        app:backgroundColorValue="@color/agricultural_capital_green"
+        app:titleColor="@android:color/white"
+        app:titleSize="15dp"
+        app:titleText="1" />
+
+    <LinearLayout
+        android:paddingLeft="12dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+         <TextView
+             android:textColor="@color/green_text_dark"
+             android:text="@string/disease_name"
+             android:gravity="center|left"
+             style="@style/commontext" />
+
+        <TextView
+            android:paddingLeft="5dp"
+            android:id="@+id/tv_disease_name"
+            android:textColor="@color/text_black"
+            android:gravity="center|left"
+            style="@style/commontext" />
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:paddingLeft="12dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/green_text_dark"
+            android:text="@string/disease_definition"
+            android:gravity="center|left"
+            style="@style/commontext"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:paddingLeft="5dp"
+            android:id="@+id/tv_disease_definition"
+            android:textColor="@color/text_black"
+            android:gravity="center|left"
+            style="@style/commontext" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="12dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/green_text_dark"
+            android:text="@string/cure_method"
+            android:gravity="center|left"
+            style="@style/commontext" />
+
+        <TextView
+            android:paddingLeft="5dp"
+            android:id="@+id/tv_cure_method"
+            android:textColor="@color/text_black"
+
+            android:gravity="center|left"
+            style="@style/commontext" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="12dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/green_text_dark"
+            android:text="@string/prevention_measures"
+            android:gravity="center|left"
+            style="@style/commontext" />
+
+        <TextView
+            android:paddingLeft="5dp"
+            android:id="@+id/tv_prevention_measures"
+            android:textColor="@color/text_black"
+            android:gravity="center|left"
+            style="@style/commontext" />
+
+    </LinearLayout>
+</LinearLayout>

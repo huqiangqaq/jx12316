@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nxt.ott.expertUpdate.MyQuestionActivity">
+    <include layout="@layout/common_title"/>
+   <LinearLayout
+       android:layout_marginTop="15dp"
+       android:background="@mipmap/bg_question"
+       android:layout_width="match_parent"
+       android:layout_height="180dp"
+       android:orientation="vertical">
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="树莓在哪种比较好？"/>
+        </RelativeLayout>
+
+       <TextView
+           android:layout_marginRight="20dp"
+           android:layout_marginLeft="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="2dp"
+           android:background="@color/line"/>
+       <RelativeLayout
+           android:layout_marginTop="5dp"
+           android:layout_width="match_parent"
+           android:layout_height="20dp">
+           <TextView
+               android:layout_centerVertical="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="标签:粮油类"
+               android:layout_alignParentLeft="true"
+               android:layout_marginLeft="20dp"/>
+           <TextView
+               android:layout_centerVertical="true"
+               android:layout_marginRight="20dp"
+               android:layout_alignParentRight="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="提问时间:2017-03-01 16:13:52"/>
+       </RelativeLayout>
+       <TextView
+           android:layout_marginTop="2dp"
+           android:layout_marginRight="20dp"
+           android:layout_marginLeft="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="2dp"
+           android:background="@color/line"/>
+       <TextView
+           android:layout_marginRight="15dp"
+           android:layout_marginTop="5dp"
+           android:layout_marginLeft="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="问题详情:问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情问题详情。"/>
+       <TextView
+           android:layout_marginTop="2dp"
+           android:layout_marginRight="20dp"
+           android:layout_marginLeft="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="2dp"
+           android:background="@color/line"/>
+   </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_et"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@mipmap/bg_question">
+        <com.nxt.ott.view.UnderLineEdittext
+            android:textSize="@dimen/sp_14"
+            android:id="@+id/et_answer"
+            android:background="@null"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>

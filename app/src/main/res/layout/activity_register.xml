@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+<include layout="@layout/common_title"/>
+    <LinearLayout
+        android:layout_margin="16dp"
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:paddingLeft="5dp"
+        android:hint="@string/phone"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_et_bg"
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+    <LinearLayout
+        android:background="@drawable/login_et_bg"
+           android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:background="@null"
+            android:gravity="center|left"
+            android:paddingLeft="5dp"
+            android:hint="@string/msg"
+            android:id="@+id/et_msg"
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:layout_height="35dp" />
+
+         <Button
+             android:text="20s"
+             android:textColor="@color/white"
+             android:background="@color/darkgray"
+             android:layout_weight="0.3"
+             android:id="@+id/btn_getmsg"
+             android:layout_width="0dp"
+             android:layout_height="35dp" />
+
+        </LinearLayout>
+        <EditText
+            android:paddingLeft="5dp"
+            android:hint="@string/phone"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_et_bg"
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+        <EditText
+            android:paddingLeft="5dp"
+            android:hint="@string/phone"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_et_bg"
+            android:id="@+id/et_re_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:background="@drawable/login_btn_bg"
+            android:textColor="@color/white"
+            android:text="@string/register"
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+    </LinearLayout>
+</LinearLayout>

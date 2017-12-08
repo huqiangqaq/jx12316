@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PhotoPicker/PhotoPicker.iml" filepath="$PROJECT_DIR$/PhotoPicker/PhotoPicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/carmeralibrary/carmeralibrary.iml" filepath="$PROJECT_DIR$/carmeralibrary/carmeralibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cptr/cptr.iml" filepath="$PROJECT_DIR$/cptr/cptr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easeui/easeui.iml" filepath="$PROJECT_DIR$/easeui/easeui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/highlight/highlight.iml" filepath="$PROJECT_DIR$/highlight/highlight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" filepath="$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jx12316.iml" filepath="$PROJECT_DIR$/jx12316.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zlibrary/zlibrary.iml" filepath="$PROJECT_DIR$/zlibrary/zlibrary.iml" />
+    </modules>
+  </component>
+</project>

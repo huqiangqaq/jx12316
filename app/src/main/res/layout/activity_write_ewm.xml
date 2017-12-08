@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+<include layout="@layout/common_title" />
+    <TextView
+        android:padding="8dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/scan_notice"
+       style="@style/commontext" />
+
+    <EditText
+        android:inputType="number"
+        android:textColor="@color/darkgray"
+        android:paddingLeft="5dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/search_et_bg"
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+   <Button
+       android:layout_marginTop="20dp"
+       android:layout_gravity="center_horizontal"
+       android:textColor="@color/white"
+       android:background="@drawable/home_scan_bg"
+       android:gravity="center"
+       android:id="@+id/btn_commint"
+       android:text="@string/commint"
+       android:layout_width="100dp"
+       android:layout_height="35dp" />
+</LinearLayout>

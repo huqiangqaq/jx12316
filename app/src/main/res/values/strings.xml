@@ -1,0 +1,540 @@
+<resources>
+    <string name="experts_advise">专家提醒：蜜桔进入采摘期，江西近期有降雪降水大风天气对蜜桔采摘的不利影响</string>
+    <string name="experts_advise1">1、保持园区排水通畅，以防渍害;并加强巡视</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="n_system">智慧农业</string>
+    <string name="hot_line">12316热线</string>
+    <string name="message">我的咨询</string>
+    <string name="yns">益农社</string>
+    <string name="wlw">物联网</string>
+    <string name="soil_testing_formula">配方施肥</string>
+    <string name="lesson">农课堂</string>
+    <string name="experter">专家</string>
+    <string name="caption_one">12316客服中心</string>
+    <string name="caption_three">农业物联网</string>
+    <string name="picture_scan">图片</string>
+    <string name="caption_four">赣农宝电商</string>
+    <string name="caption_five">产品追溯</string>
+    <string name="nanchang">南昌</string>
+    <string name="title">江西12316</string>
+    <string name="detail">详情</string>
+    <string name="search">搜索</string>
+    <string name="address_book">通讯录</string>
+    <string name="voice">声音</string>
+
+    <string name="ask_expert">找专家</string>
+    <string name="search_expert">搜专家</string>
+    <string name="no_data">无数据</string>
+
+    <string name="app_name">江西12316</string>
+    <string name="name">姓名</string>
+    <string name="expertise">专长</string>
+    <string name="unit">单位</string>
+    <string name="post">职务</string>
+    <string name="experter_ask">益农信息</string>
+    <string name="my_ask">我的咨询</string>
+    <string name="home_ndf">农大夫</string>
+    <string name="home_bch">病虫害图谱</string>
+
+    <string name="mall">便民商城</string>
+    <string name="mall_materials">农资商城</string>
+    <string name="pay_cn">国家电网</string>
+    <string name="mall_department">百货商城</string>
+    <string name="recharge">话费充值</string>
+    <string name="mobile">移动充值</string>
+    <string name="unicom">联通充值</string>
+    <string name="telecom">电信充值</string>
+    <string name="yns_bill">益农充值</string>
+    <string name="ticket">车票购买</string>
+    <string name="waterorele">交水电费</string>
+    <string name="see_doctor">挂号就诊</string>
+    <string name="break_rule">违章查询</string>
+
+
+    <string name="kind_choose">种类选择</string>
+    <string name="diseate_type">诊断类型</string>
+    <string name="disease_choose">症状选择</string>
+    <string name="picture_choose">图片选择</string>
+    <string name="result_search">结果查询</string>
+    <string name="please_choose_diease">请先选择症状</string>
+    <string name="choose_from_photo_album">从相册中选</string>
+    <string name="choose_take_carmera">拍照选择</string>
+    <string name="disease_name">疾病名称</string>
+    <string name="disease_definition">疾病定义</string>
+    <string name="cure_method">治疗方法</string>
+    <string name="prevention_measures">预防措施</string>
+    <string name="please_choose_kind">请先选择种类</string>
+    <string name="null_data">暂无内容</string>
+    <string name="please_choose_diease_type">请先选择诊断类型</string>
+
+    <string name="agriculture_supply">市场供求</string>
+    <string name="production_scan">产品追溯</string>
+    <string name="agriculture_msg">农资讯</string>
+
+    <string name="home">专家咨询</string>
+    <string name="personcenter">个人中心</string>
+    <string name="aboutus">关于我们</string>
+
+    <string name="city">市</string>
+    <string name="xian">县</string>
+    <string name="area_choose">区域选择</string>
+    <string name="nowarea">当前区域:</string>
+    <string name="net_error">网络连接错误</string>
+    <string name="no_content">暂无内容</string>
+    <string name="weather_detail">农业气象</string>
+
+    <string name="scan_ewm">扫描追溯码</string>
+    <string name="write_ewm">追溯码查询</string>
+    <string name="gnb">赣农宝</string>
+    <string name="reminder">提示</string>
+    <string name="goon">继续</string>
+
+    <string name="by_company">按公司</string>
+    <string name="by_card_number">按登记</string>
+    <string name="by_ingredient">按成分</string>
+    <string name="by_crop">按作物</string>
+    <string name="please_write_company">请输入公司名称…</string>
+    <string name="please_write_cardnumber">请输入登记证号 如 PD20110001</string>
+    <string name="search_content_is_not_null">查询内容不能为空</string>
+    <string name="agriculture_detail">农资详情</string>
+    <string name="cancel">取消</string>
+    <string name="isdownload_please_wait">正在下载中，请稍后…</string>
+    <string name="scan_qrcode">将二维码放入框内，即可自动扫描</string>
+    <string name="scan_onecode">将条形码放入框内，即可自动扫描</string>
+    <string name="scan_qr">二维码</string>
+    <string name="scan_one">条形码</string>
+    <string name="scan_scan">扫一扫</string>
+    <string name="msg_camera_framework_bug">抱歉，Android相机可能被占用，您可能需要重启设备。</string>
+    <string name="msg_default_format">格式</string>
+    <string name="msg_default_meta">元数据</string>
+    <string name="msg_default_time">时间</string>
+    <string name="msg_default_type">类型</string>
+    <string name="scan_notice">*请输入农产品追溯码</string>
+    <string name="commint">提交</string>
+    <string name="scan_content_isnot_null">追溯码不能为空</string>
+    <string name="search_result">查询结果</string>
+    <string name="web_title">江西12316</string>
+    <string name="comp_info">公司介绍：\n\u0009\u0009北京农信通科技有限责任公司（简称农信通科技，
+        http://www.nxt.com.cn）是国内最大的涉农信息综合服务运营商，也是市场占有率最高的农业信息化
+        建设全面解决方案提供商。</string>
+    <string name="comp_info_update">
+        公司介绍：\n\u0009\u0009江西农信通科技有限公司是集团在华东区域设立的运营总部，
+        地址位于南昌市东湖区农业检验检测综合大楼。公司成立于2015年，
+        是江西省服务业重点龙头企业，目前拥有一批专业的技术研发、电商运营、市场推广、战略规划的人才梯队，
+        作为江西省智慧农业战略合作方，全面部署全省农业信息化建设工作。智慧农业“123+N”建设初具成效，
+        在全国开创了“互联网+农业”领域PPP合作先河，江西农信通得到了全社会的广泛认可。雄关漫道真如铁，而今迈步从头越。
+        江西农信通将广泛联合社会优势力量，不断开拓创新，立足江西面向全国为农业现代化发展做出更大贡献。
+    </string>
+    <string name="cpt_info">客户端介绍：\n\u0009\u0009江西12316客户端主要是针对便民，利民来设计的，
+        包含专家咨询、三农资讯、农业信息网等功能的手机应用软件</string>
+    <string name="consulting_services">咨询服务:\n\u0009\u0009面向三农提供政策法规、生产技术、市场信息等咨询服务。</string>
+    <string name="speak_complaints">转接投诉:\n\u0009\u0009转接全省范围内的假劣农资、农产品质量安全事件等投诉、举报。</string>
+    <string name="platform_info">平台介绍：\n\u0009\u0009江西省12316资讯服务中心是省农业厅联合省
+        广播电视台、农信通公司、省联通公司等通信运营商共同打造的农业信息综合服务平台。整合全省农业专家资源，
+        针对农业生产、经营、管理、服务各环节，通过12316热线、短彩信、手机APP、微信公众号等服务手段，
+        构建面向省、市、县、乡、村“五位一体”的三农综合信息服务体系。</string>
+    <string name="comp_tel">电话：0791-82216706</string>
+    <string name="comp_email">邮箱：nxtchina@163.com</string>
+    <string name="comp_address">地址：北京市海淀区中关村南大街6号中电信息大厦1506\n\u0009\u0009\u0009河南省鹤壁市淇滨区职教园中国（鹤壁）农业硅谷产业园</string>
+    <string name="comp_address_update">地址：江西省南昌市文教路359号农业综合检验检测大楼103室</string>
+    <string name="ewm">二维码</string>
+    <string name="ewm_notice">扫描下方二维码安装江西12316客户端</string>
+    <string name="username">姓名</string>
+    <string name="now_unregiste">暂未注册</string>
+    <string name="phone_is_registered">手机号已注册</string>
+    <string name="register_success">注册成功</string>
+    <string name="register_fail">注册失败</string>
+    <string name="phone_is_noregistered">您的账号还未注册,请先注册</string>
+    <string name="login">登录</string>
+    <string name="forget_pwd">忘记密码?</string>
+    <string name="new_pwd">新密码</string>
+    <string name="write_pwd_useer">填写密码用户名</string>
+    <string name="register">注册</string>
+    <string name="updatepwd">修改密码</string>
+    <string name="phone">手机号</string>
+    <string name="msg">输入6位验证码</string>
+    <string name="next">下一步</string>
+    <string name="write_msg">填写验证码</string>
+    <string name="password">密码</string>
+    <string name="re_password">确认密码</string>
+    <string name="complete">完成</string>
+    <string name="write_pwd">填写密码</string>
+    <string name="name_isnot_null">姓名不能为空</string>
+    <string name="phone_isnot_null">请先输入电话号码</string>
+    <string name="please_write_rightphone">请输入正确的手机号</string>
+    <string name="sms_content">【江西12316】"%s"（手机短信验证码，为了保证账户安全，请勿向他人泄露，如非本人操作请忽略）</string>
+    <string name="msg_success">获取短信成功</string>
+    <string name="re_get_sms">重新获取验证码(%ss)</string>
+    <string name="get_sms">重新获取验证码</string>
+    <string name="error_sms_code">请输入正确的验证码</string>
+    <string name="pwd_isnot_null">密码不能为空</string>
+    <string name="please_repwd">请确认密码</string>
+    <string name="update_success">修改成功</string>
+    <string name="update_fail">修改失败</string>
+    <string name="is_commit">正在提交</string>
+    <string name="pwd_write_wrong">两次密码输入不一致</string>
+    <string name="data_is_over">数据已加载完毕</string>
+    <string name="expert_is_over">专家数据已加载完毕</string>
+    <string name="news_detail">新闻详情</string>
+    <string name="search_new">搜</string>
+    <string name="agriculture_doctor">农大夫</string>
+    <string name="pesticide_search">农资查询</string>
+    <string name="exit_notice">再按一次退出江西12316</string>
+    <string name="username_isnot_null">用户名不能为空</string>
+    <string name="error_get_data">获取数据失败</string>
+    <string name="pesticide">农药</string>
+    <string name="fertilizer">肥料</string>
+    <string name="seed">种子</string>
+    <string name="microorganism">微生物</string>
+    <string name="error_network_none">网络错误</string>
+    <string name="is_loading">加载中……</string>
+
+    <string name="wisdom_cloud">一云</string>
+    <string name="wisdom_center">二中心</string>
+    <string name="wisdom_platform">三平台</string>
+    <string name="wisdom_system">N系统</string>
+
+    <string name="agrotechnique_supplymsg">市场供求</string>
+    <string name="publishmessage">发布供求信息</string>
+    <string name="type">类型</string>
+    <string name="uploadphoto">上传图片</string>
+    <string name="commit">提交</string>
+    <string name="reset">重置</string>
+    <string name="please_write_title">请输入标题</string>
+    <string name="please_write_content">请输内容</string>
+    <string name="expertadvise">农业气象</string>
+    <string name="expertanswer">在线咨询</string>
+    <string name="expertanswer_detail">详情</string>
+
+    <string name="str_recorder_normal">按住说话</string>
+    <string name="str_recorder_recording">松开结束</string>
+    <string name="str_recorder_want_cancel">松开手指，取消发送</string>
+    <string name="hint_reply">回复 "%s"</string>
+    <string name="hint_comment">我也说一句</string>
+    <string name="hint_message">正在提交你的问题,请稍后！</string>
+    <string name="kind_message">正在为您筛选专家！</string>
+    <string name="hp">确定好评吗?</string>
+    <string name="zp">确定中评吗?</string>
+    <string name="cp">确定差评吗?</string>
+    <string name="dialog_default_title">Here\'s a message!</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string-array name="search_type">
+        <item>按类型</item>
+        <item>按姓名</item>
+    </string-array>
+
+
+    <string-array name="agriculture_info_list">
+        <item>农业新闻</item>
+        <item>惠农政策</item>
+        <!--<item>致富政策</item>-->
+        <!--<item>致富专题</item>-->
+        <item>农时农事</item>
+        <!--<item>农技百科</item>-->
+        <!--<item>国内信息</item>-->
+        <!--<item>动态</item>-->
+        <!--<item>其他</item>-->
+    </string-array>
+
+    <string-array name="two_center">
+        <item>12316资讯服务中心</item>
+        <item>农业指挥调度中心</item>
+    </string-array>
+    <string-array name="three_platform">
+        <item>农业物联网</item>
+        <item>质量安全追溯</item>
+        <item>农产品电商</item>
+    </string-array>
+    <string-array name="doctor_name_list">
+        <item>家禽</item>
+        <item>畜牧</item>
+        <item>农产品</item>
+        <item>果蔬</item>
+        <item>水产品</item>
+        <item>更多</item>
+    </string-array>
+    <string-array name="doctor_introduction_list">
+        <item>鸡鸭鹅害诊治及会诊</item>
+        <item>牛羊猪害诊治及会诊</item>
+        <item>农产品病虫害诊治</item>
+        <item>果蔬病虫害诊治</item>
+        <item>水产品病害诊治</item>
+        <item>更多更新病虫害信息</item>
+    </string-array>
+    <string-array name="raise_livestock_list">
+        <item>猪</item>
+        <item>牛</item>
+        <item>羊</item>
+    </string-array>
+
+    <string-array name="garden_stuff_list">
+        <item>梨</item>
+        <item>桃</item>
+        <item>苹果</item>
+        <item>西瓜</item>
+        <item>黄瓜</item>
+        <item>番茄</item>
+    </string-array>
+
+    <string-array name="crops_list">
+        <item>棉花</item>
+        <item>水稻</item>
+        <item>玉米</item>
+        <item>小麦</item>
+        <item>大豆</item>
+    </string-array>
+    <string-array name="poultry_list">
+        <item>鸡</item>
+        <item>鸭</item>
+        <item>鹅</item>
+    </string-array>
+
+    <string-array name="waterproduct_list">
+        <item>鳢鱼</item>
+        <item>鳗鱼</item>
+        <item>鳟鱼</item>
+        <item>白鲌鱼</item>
+        <item>雅罗鱼</item>
+        <item>鲶鱼</item>
+        <item>鳊鱼</item>
+        <item>鲂鱼</item>
+        <item>鲮鱼</item>
+        <item>罗非鱼</item>
+        <item>鲈鱼</item>
+        <item>鳜鱼</item>
+        <item>金鱼及其他观赏鱼</item>
+        <item>其他鱼</item>
+        <item>蟹</item>
+        <item>鳖</item>
+        <item>龟</item>
+        <item>牛蛙</item>
+        <item>虾</item>
+    </string-array>
+
+    <string-array name="area_list">
+        <item>鹰潭市</item>
+        <item>余江县</item>
+        <item>贵溪市</item>
+        <item>新余</item>
+        <item>分宜县</item>
+        <item>南昌市</item>
+        <item>新建县</item>
+        <item>安义县</item>
+        <item>进贤县</item>
+        <item>九江市</item>
+        <item>九江县</item>
+        <item>进贤县</item>
+        <item>永修县</item>
+        <item>德安县</item>
+        <item>瑞昌市</item>
+        <item>湖口县</item>
+        <item>武宁县</item>
+        <item>修水县</item>
+        <item>都昌县</item>
+        <item>彭泽县</item>
+        <item>星子县</item>
+        <item>上饶市</item>
+        <item>上饶县</item>
+        <item>鄱阳县</item>
+        <item>婺源县</item>
+        <item>德兴市</item>
+        <item>横峰县</item>
+        <item>弋阳县</item>
+        <item>铅山县</item>
+        <item>广丰县</item>
+        <item>玉山县</item>
+        <item>余干县</item>
+        <item>万年县</item>
+        <item>抚州市</item>
+        <item>东乡县</item>
+        <item>资溪县</item>
+        <item>崇仁县</item>
+        <item>乐安县</item>
+        <item>宜黄县</item>
+        <item>南丰县</item>
+        <item>黎川县</item>
+        <item>南城县</item>
+        <item>金溪县</item>
+        <item>广昌县</item>
+        <item>尔安县</item>
+        <item>靖安县</item>
+        <item>宜春市</item>
+        <item>奉新县</item>
+        <item>高安市</item>
+        <item>丰城市</item>
+        <item>樟树市</item>
+        <item>万载县</item>
+        <item>铜鼓县</item>
+        <item>宜丰县</item>
+        <item>上高县</item>
+        <item>吉安市</item>
+        <item>吉安县</item>
+        <item>新干县</item>
+        <item>峡江县</item>
+        <item>永丰县</item>
+        <item>吉水县</item>
+        <item>安福县</item>
+        <item>永新县</item>
+        <item>井冈山市</item>
+        <item>泰和县</item>
+        <item>遂川县</item>
+        <item>宁冈县</item>
+        <item>万安县</item>
+        <item>赣州市</item>
+        <item>赣县</item>
+        <item>崇义县</item>
+        <item>万安县</item>
+        <item>南康市</item>
+        <item>大余县</item>
+        <item>信丰县</item>
+        <item>龙南县</item>
+        <item>全南县</item>
+        <item>定南县</item>
+        <item>安远县</item>
+        <item>寻乌县</item>
+        <item>于都县</item>
+        <item>兴国县</item>
+        <item>瑞金市</item>
+        <item>会昌县</item>
+        <item>石城县</item>
+        <item>宁都县</item>
+        <item>景德镇市</item>
+        <item>乐平市</item>
+        <item>浮梁县</item>
+        <item>萍乡市</item>
+        <item>上栗县</item>
+        <item>芦溪县</item>
+        <item>莲花县</item>
+    </string-array>
+
+    <string-array name="n_list">
+        <item>检疫出证</item>
+        <item>行政执法</item>
+        <item>农技推广</item>
+        <item>三农舆情</item>
+
+        <item>信息进村入户</item>
+        <item>休闲农业</item>
+        <item>土地经营权交易</item>
+        <item>产业化集聚群</item>
+
+        <item>精准扶贫</item>
+        <item>质量安全监督</item>
+        <item>生产经营档案</item>
+        <item>种粮大户调查</item>
+
+        <item>三农咨询</item>
+        <item>移动终端</item>
+        <item>视频监控诊断</item>
+        <item>江西牧易</item>
+
+        <item>江西农易</item>
+        <item>新经营主体</item>
+        <item>生产经营</item>
+        <item>水产品电商</item>
+
+        <item>苗木电商</item>
+        <item>蜂产品电商</item>
+        <item>新经营主体</item>
+        <item>农技调度</item>
+
+        <item>农情气象</item>
+        <item>病虫害监控</item>
+        <item>土地确权</item>
+        <item>农药溯源</item>
+
+    </string-array>
+    <string-array name="n_url_list">
+        <item>http://jxdj.agridoor.com.cn/dongjian/nxtcbf/login.jsp</item>
+        <item>http://182.116.57.248:5013/MainFrame.aspx</item>
+        <item>http://182.116.57.248:5012/mainframe.aspx</item>
+        <item>http://jiangxi.yq.yn15.com/app/portalindex/get/pre</item>
+
+        <item>http://jxyn.365960.cn/</item>
+        <item>http://jxxxny.54vc.com/</item>
+        <item>http://182.116.57.248:9039/</item>
+        <item>http://zs.yn15.com/cpt3/jiangxi/index.jhtml;jsessionid=048FDFF533D6794225BF8BD4F6BDC656</item>
+
+        <item>http://182.116.57.248:8117/login.htm</item>
+        <item>http://zs.yn15.com/cpt/jiangxi/login.jhtml</item>
+        <item>http://cpt.lgj.1x33.com/Login?ReturnUrl=%2f</item>
+        <item>""</item>
+
+        <item>""</item>
+        <item>""</item>
+        <item>http://182.116.57.248:9040/</item>
+        <item>http://jximy.365960.cn/</item>
+
+        <item>http://jxiny.365960.cn/</item>
+        <item>http://jxifw.365960.cn/</item>
+        <item>http://jxs.zdd.54vc.com/</item>
+        <item>http://jxisc.365960.cn/</item>
+
+        <item>http://jximm.365960.cn/</item>
+        <item>http://jxifc.365960.cn/</item>
+        <item>http://jxifw.365960.cn/</item>
+        <item>""</item>
+
+        <item>""</item>
+        <item>""</item>
+        <item>""</item>
+        <item>""</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="logout">退出登陆</string>
+    <string name="ok">确定</string>
+    <string name="Are_logged_out">正在退出登陆</string>
+    <string name="nickname">真实姓名</string>
+    <string name="setting_nickname">填写真实姓名</string>
+    <string name="toast_nick_not_isnull">真实姓名不能为空</string>
+    <string name="dl_title_upload_photo">上传头像</string>
+    <string name="dl_msg_take_photo">拍照上传</string>
+    <string name="dl_msg_local_upload">本地上传</string>
+    <string name="toast_no_support">暂不支持</string>
+    <string name="dl_update_photo">更新头像</string>
+    <string name="dl_waiting">请稍等…</string>
+    <string name="expert_ask_hint">请概述你的问题,不少于六个字</string>
+    <string name="experter_detail">请输入问题详情</string>
+    <string name="experter_apply">发布</string>
+
+
+    <string name="call_version_inconsistent">通话协议版本不一致</string>
+    <string name="switch_camera">切换摄像头</string>
+    <string name="capture_image">抓取图片</string>
+    <string name="no_call_data">没有通话数据</string>
+    <string name="network_unstable">网络不稳定</string>
+    <string name="have_connected_with">已经和对方建立连接</string>
+    <string name="Are_connected_to_each_other">正在连接对方...</string>
+    <string name="In_the_call">通话中...</string>
+    <string name="network_unavailable">网络连接不可用，请检查网络</string>
+    <string name="The_other_party_refused_to_accept">对方拒绝接受！...</string>
+    <string name="Connection_failure">连接建立失败！...</string>
+    <string name="The_other_party_is_not_online">对方不在线，请稍后再拨...</string>
+    <string name="The_other_is_on_the_phone_please">对方正在通话中，请稍后再拨</string>
+    <string name="The_other_party_did_not_answer">对方未接听</string>
+    <string name="mute">静音</string>
+    <string name="Hands_free">免提</string>
+    <string name="hang_up">挂断</string>
+    <string name="answer">接听</string>
+    <string name="The_other_is_hang_up">对方已经挂断</string>
+    <string name="did_not_answer">未接听</string>
+    <string name="Has_been_cancelled">已取消</string>
+    <string name="Refused">已拒绝</string>
+    <string name="hanging_up">正在挂断..</string>
+    <string name="em_user_remove">账号被移除</string>
+    <string name="Logoff_notification">下线通知</string>
+    <string name="connect_conflict">同一帐号已在其他设备登录</string>
+    <string name="Remove_the_notification">移除通知</string>
+    <string name="location">定位中...</string>
+
+
+    <!--自定义behavior-->
+    <string name="scale_down_show_behavior">com.nxt.ott.behavior.ScaleDownShowBehavior</string>
+    <string name="handle_pic">正在处理图片，请稍后!</string>
+    <string name="wisdom">智慧农业</string>
+</resources>

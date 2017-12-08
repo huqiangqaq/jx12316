@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_bg"
+              android:orientation="vertical"
+              android:paddingTop="5dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--商城-->
+            <LinearLayout
+                android:id="@+id/layout_mall_materials"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/con_mall_materials"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/mall_materials"
+                    android:textColor="@color/text_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <!--话费充值-->
+            <LinearLayout
+                android:id="@+id/layout_mall_department"
+                style="@style/mine_ll">
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/con_mall_department"
+                    android:id="@+id/imageView5"/>
+
+                <TextView
+                    style="@style/commontext"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/mall_department"
+                    android:textColor="@color/text_black"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+
+

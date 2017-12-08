@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <com.nxt.ott.view.RoundedLetterView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/roundview_kind"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        app:backgroundColorValue="@color/agricultural_capital_green"
+        app:titleColor="@android:color/white"
+        app:titleSize="15dp"
+        app:titleText="A"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_kind_item_name"
+        style="@style/commontext"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/text_black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/right_arrow" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/common_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<include layout="@layout/common_title" />
+<include layout="@layout/common_header" />
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <com.nxt.zyl.ui.widget.CustomListView
+              android:id="@+id/listview_diseate_choose"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+
+    <Button
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:text="@string/next"
+        android:layout_margin="30dp"
+        android:background="@drawable/agricultural_capital_btn_bg"
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+      </LinearLayout>
+  </ScrollView>
+    <include layout="@layout/activity_common_loading" />
+</LinearLayout>

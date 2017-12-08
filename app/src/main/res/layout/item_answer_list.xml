@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/experter_item_bg"
+        android:orientation="vertical">
+    <LinearLayout
+        android:padding="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical">
+        <cn.bingoogolapple.badgeview.BGABadgeTextView
+            android:textStyle="bold"
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="5dp"
+            android:text="标题:南昌县岗上镇"
+            android:textColor="@color/expeter_title"
+            android:textSize="14sp"
+            android:layout_weight="1"
+            app:badge_padding="5dp"/>
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:id="@+id/btn_guanzhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="@color/gray"
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="标签: 粮油类" />
+
+            <TextView
+                android:textColor="@color/gray"
+                android:id="@+id/reply_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="回复时间: 2017-03-01 16:13:50" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="回复状态:" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:text="专家已回复" />
+            <TextView
+                android:id="@+id/attention_count"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:textColor="#94a8ba"
+            android:id="@+id/reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="问题详情:回复内容回复内容回复内容回复内容回复内回复内容回复内容回复内容回复内容回复内容回复内容回复内容容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容" />
+
+        <RelativeLayout
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:visibility="gone"
+                android:src="@mipmap/icon_hd"
+                android:id="@+id/iv_answer"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_10" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
