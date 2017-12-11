@@ -41,6 +41,7 @@ public abstract class BaseActivity extends FragmentActivity implements
         setContentView(getLayout());
         date = TimeUtil.getdate1();
         application = MyApplication.getInstance();
+        application.addActivity(this);
         zDataTask = application.getZDataTask();
         ButterKnife.bind(this);
         initView();

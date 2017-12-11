@@ -424,10 +424,11 @@
             android:name=".expertUpdate.AnswerList_Activity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
-        <activity android:name=".activity.wisdom.WisdomActivity"></activity>
-        <activity android:name=".activity.doctor.DoctorMenuActivity"></activity>
-        <activity android:name=".expertUpdate.DetailActivity"/>
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".activity.wisdom.WisdomActivity" />
+        <activity android:name=".activity.doctor.DoctorMenuActivity" />
+        <activity android:name=".expertUpdate.DetailActivity" />
+        <activity android:name=".expertUpdate.ChooseActivity"></activity>
     </application>
 
 </manifest>

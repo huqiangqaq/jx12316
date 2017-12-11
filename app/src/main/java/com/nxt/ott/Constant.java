@@ -278,7 +278,10 @@ public class Constant {
     public static final String ISREGISTER= BASE_URL_EXPERTER+"/zdapi.php";
     //根据id获取问题详情
     public static final String GETDETAILBYID = BASE_URL_EXPERTER+"/wtdapi.php";
-
+    //专家类型列表
+    public static final String EXPERTER_TYPE = BASE_URL_EXPERTER+"/ztlistapi.php";
+    //获取专家列表
+    public static final String EXPERTERLIST = BASE_URL_EXPERTER+"/zlistapi.php";
     /**
      * 江西省测土配方施肥
      */

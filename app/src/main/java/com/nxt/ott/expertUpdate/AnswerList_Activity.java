@@ -91,9 +91,7 @@ public class AnswerList_Activity extends AppCompatActivity implements View.OnCli
     private AlertDialog.Builder builder;
     protected AVLoadingIndicatorView loadingIndicatorView;
     private int mTotalCount = 0;
-    private int mPageSize = 10;
     private int mCurrentIndex = 1;
-    private int mCurrentCounter = 0;
     private TextView tv_all;
     private Map<String, String> map = new HashMap<>();
     private HighLight mHightLight;
@@ -204,7 +202,6 @@ public class AnswerList_Activity extends AppCompatActivity implements View.OnCli
     private void Refresh(final Type type) {
         initBadgeView();
         AnswerListAdapter.setEnableLoadMore(false);
-        mCurrentCounter = 0;
         mCurrentIndex = 1;
         switch (type) {
 //            case ATTENTION:
@@ -289,7 +286,7 @@ public class AnswerList_Activity extends AppCompatActivity implements View.OnCli
                         }
                         Answer answer = new Gson().fromJson(json, Answer.class);
                         List<Answer.DataBean> answerList = answer.getData();
-                        if (mCurrentCounter >= mTotalCount || answerList.isEmpty()) {
+                        if (mCurrentIndex >= mTotalCount || answerList.isEmpty()) {
                             //数据全部加载完毕
                             AnswerListAdapter.loadMoreEnd();
                         } else {
@@ -302,6 +299,7 @@ public class AnswerList_Activity extends AppCompatActivity implements View.OnCli
                         refreshLayout.setEnabled(true);
                     }
                 });
+
     }
 
     private void createBottomSheetDialog() {
@@ -422,7 +420,6 @@ public class AnswerList_Activity extends AppCompatActivity implements View.OnCli
                     public void onSuccess(String str, Call call, Response response) {
                         Answer answer = new Gson().fromJson(str, Answer.class);
                         answers = answer.getData();
-                        mCurrentCounter = answers.size();
                         AnswerListAdapter.setNewData(answers);
                         AnswerListAdapter.addHeaderView(headerLayout);
                         if (answers != null) {
@@ -675,7 +672,7 @@ public class AnswerList_Activity extends AppCompatActivity implements View.OnCli
                 Refresh(SEARCH);
                 break;
             case R.id.rl_quick:
-                startActivity(new Intent(this, AskActivity.class).putExtra("isExperter", false));
+                startActivity(new Intent(this, ChooseActivity.class));
                 break;
             default:
                 break;

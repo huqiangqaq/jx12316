@@ -53,12 +53,11 @@ import com.nxt.ott.activity.titlebottom.WeatherDetailActivity;
 import com.nxt.ott.adapter.HomeQuestionAdapter;
 import com.nxt.ott.domain.Answer;
 import com.nxt.ott.domain.ExpertAdvise;
-import com.nxt.ott.domain.HotExperter;
 import com.nxt.ott.domain.Soil;
 import com.nxt.ott.domain.Weather;
 import com.nxt.ott.domain.WeatherUpdate;
 import com.nxt.ott.expertUpdate.AnswerList_Activity;
-import com.nxt.ott.expertUpdate.AskActivity;
+import com.nxt.ott.expertUpdate.ChooseActivity;
 import com.nxt.ott.expertUpdate.DetailActivity;
 import com.nxt.ott.expertUpdate.ExperterListActivity;
 import com.nxt.ott.util.CharacterParser;
@@ -128,7 +127,6 @@ public class HomeFragment extends ZBaseFragment implements HttpCallback, EasyPer
     private HighLight mHightLight;
     private RelativeLayout rl_quick, rl_find;
     private RecyclerView rv_redian;
-    private ArrayList<HotExperter> hotExperters = new ArrayList<>();
     private List<Answer.DataBean> answers = new ArrayList<>();
     private HomeQuestionAdapter homeQuestionAdapter;
     public static final int PERMISSION_CODE = 100;
@@ -474,7 +472,7 @@ public class HomeFragment extends ZBaseFragment implements HttpCallback, EasyPer
                 startActivity(new Intent(getActivity(), DoctorMenuActivity.class));
                 break;
             case R.id.rl_quick:
-                startActivity(new Intent(getActivity(), AskActivity.class).putExtra("isExperter", false));
+                startActivity(new Intent(getActivity(), ChooseActivity.class));
                 break;
             case R.id.rl_find:
                 startActivity(new Intent(getActivity(), ExperterListActivity.class));
