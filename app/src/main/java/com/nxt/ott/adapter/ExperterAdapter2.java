@@ -25,11 +25,11 @@ import java.util.List;
 
 public class ExperterAdapter2 extends BaseQuickAdapter<Experter,BaseViewHolder> {
     private boolean isRecommed;
-    private onExperterClick onExperterClick;
-
-    public void setOnExperterClick(ExperterAdapter2.onExperterClick onExperterClick) {
-        this.onExperterClick = onExperterClick;
-    }
+//    private onExperterClick onExperterClick;
+//
+//    public void setOnExperterClick(ExperterAdapter2.onExperterClick onExperterClick) {
+//        this.onExperterClick = onExperterClick;
+//    }
 
     public ExperterAdapter2(int layoutResId, List<Experter> data, boolean isRecommed) {
         super(layoutResId, data);
@@ -70,12 +70,12 @@ public class ExperterAdapter2 extends BaseQuickAdapter<Experter,BaseViewHolder> 
                 mContext.startActivity(intent);
             }
         });
-        helper.getView(R.id.tv_experter_picture).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onExperterClick.onExperterClickListener(v,helper.getLayoutPosition());
-            }
-        });
+//        helper.getView(R.id.tv_experter_picture).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onExperterClick.onExperterClickListener(v,helper.getLayoutPosition());
+//            }
+//        });
         helper.getView(R.id.tv_experter_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +96,7 @@ public class ExperterAdapter2 extends BaseQuickAdapter<Experter,BaseViewHolder> 
     }
 
 
-    public interface onExperterClick{
-        void onExperterClickListener(View v,int position);
-    }
+//    public interface onExperterClick{
+//        void onExperterClickListener(View v,int position);
+//    }
 }

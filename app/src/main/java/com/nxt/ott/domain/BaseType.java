@@ -8,6 +8,7 @@ public class BaseType {
     private String id;
     private String abiaoqian;
 
+
     public String getId() {
         return id;
     }

@@ -60,20 +60,20 @@
             android:layout_height="20dp"
             android:background="@color/line"/>
 
-       <RelativeLayout
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:layout_weight="1">
-           <TextView
-               android:id="@+id/tv_experter_picture"
-               android:gravity="center_vertical"
-               android:layout_centerInParent="true"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:drawablePadding="5dp"
-               android:drawableLeft="@mipmap/button_zjzx02"
-               android:text="专家咨询"/>
-       </RelativeLayout>
+       <!--<RelativeLayout-->
+           <!--android:layout_width="0dp"-->
+           <!--android:layout_height="wrap_content"-->
+           <!--android:layout_weight="1">-->
+           <!--<TextView-->
+               <!--android:id="@+id/tv_experter_picture"-->
+               <!--android:gravity="center_vertical"-->
+               <!--android:layout_centerInParent="true"-->
+               <!--android:layout_width="wrap_content"-->
+               <!--android:layout_height="wrap_content"-->
+               <!--android:drawablePadding="5dp"-->
+               <!--android:drawableLeft="@mipmap/button_zjzx02"-->
+               <!--android:text="专家咨询"/>-->
+       <!--</RelativeLayout>-->
         <TextView
             android:layout_width="1dp"
             android:layout_height="20dp"

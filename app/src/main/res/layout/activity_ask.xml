@@ -4,122 +4,203 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#FAE0C0"
     tools:context="com.nxt.ott.expertUpdate.AskActivity">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <include layout="@layout/common_title"/>
-        <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_line">
-            <EditText
-                android:textColor="@color/gray"
-                android:id="@+id/et_title"
-                android:textSize="@dimen/sp_14"
-                android:layout_marginLeft="15dp"
-                android:hint="@string/expert_ask_hint"
-                android:background="@null"
-                android:layout_gravity="bottom"
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
-        </LinearLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_text"
-            android:layout_marginTop="@dimen/dp_10"
-            android:background="@drawable/bg_line"
-            android:layout_width="match_parent"
-            android:layout_height="120dp">
-            <EditText
-                android:hint="@string/experter_detail"
-                android:gravity="start"
-                android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginLeft="@dimen/dp_10"
-                android:layout_marginRight="@dimen/dp_10"
-                android:background="@null"
-                android:id="@+id/et_text"
-                android:textSize="@dimen/sp_14"
-                android:textColor="@color/gray"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </RelativeLayout>
-
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp">
-            <TextView
-                android:id="@+id/yy"
-                android:layout_marginLeft="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:background="@mipmap/icon_yy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <RelativeLayout
-                android:layout_toRightOf="@id/yy"
-                android:id="@+id/rl"
-                android:visibility="gone"
+            android:layout_height="match_parent">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@mipmap/icon"
-                    android:id="@+id/icon"
-                    />
-                <FrameLayout
-                    android:id="@+id/id_recoder_anim"
-                    android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/common_title"/>
+                <LinearLayout
+                    android:id="@+id/ll_user"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@id/icon"
-                    android:background="@mipmap/adj">
-                </FrameLayout>
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手机号:"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_line"
+                        android:orientation="vertical">
+                        <EditText
+                            android:textColor="@color/gray"
+                            android:id="@+id/phone"
+                            android:textSize="@dimen/sp_14"
+                            android:layout_marginLeft="15dp"
+                            android:hint="请输入您的手机，方便专家及时回复您"
+                            android:background="@null"
+                            android:layout_gravity="bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:inputType="phone"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手机号:"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_line"
+                        android:orientation="vertical">
+                        <EditText
+                            android:textColor="@color/gray"
+                            android:id="@+id/phone2"
+                            android:textSize="@dimen/sp_14"
+                            android:layout_marginLeft="15dp"
+                            android:hint="请再次输入您的手机号"
+                            android:background="@null"
+                            android:layout_gravity="bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:inputType="phone"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="问题标签:"
+                        android:textSize="@dimen/sp_16"
+                        android:textColor="@color/black"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_line"
+                        android:orientation="vertical">
+                        <EditText
+                            android:textColor="@color/gray"
+                            android:id="@+id/et_title"
+                            android:textSize="@dimen/sp_14"
+                            android:layout_marginLeft="15dp"
+                            android:hint="@string/expert_ask_hint"
+                            android:background="@null"
+                            android:layout_gravity="bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp" />
+                    </LinearLayout>
+                </LinearLayout>
                 <TextView
-                    android:id="@+id/id_recoder_time"
+                    android:id="@+id/tag"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@id/id_recoder_anim"
-                    android:layout_marginRight="3dp"
-                    android:textColor="#ff777777"
-                    />
-            </RelativeLayout>
+                    android:text="问题详情:"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"/>
+                <RelativeLayout
+                    android:id="@+id/rl_text"
+                    android:background="@drawable/bg_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <EditText
+                        android:hint="@string/experter_detail"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@null"
+                        android:id="@+id/et_text"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                    <TextView
+                        android:id="@+id/yy"
+                        android:layout_marginLeft="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@mipmap/icon_yy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <RelativeLayout
+                        android:layout_toRightOf="@id/yy"
+                        android:id="@+id/rl"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@mipmap/icon"
+                            android:id="@+id/icon"
+                            />
+                        <FrameLayout
+                            android:id="@+id/id_recoder_anim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/icon"
+                            android:background="@mipmap/adj">
+                        </FrameLayout>
+                        <TextView
+                            android:id="@+id/id_recoder_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/id_recoder_anim"
+                            android:layout_marginRight="3dp"
+                            android:textColor="#ff777777"
+                            />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/icon_pic"/>
+                    <me.iwf.photopicker.widget.MultiPickResultView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/recycler_view"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="200dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/experter_apply"
+                    style="@style/dialog_blue_button"
+                    android:layout_marginBottom="@dimen/dp_10"/>
+            </LinearLayout>
+
 
         </RelativeLayout>
-        <LinearLayout
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_marginLeft="15dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/icon_pic"/>
-        </LinearLayout>
-        <me.iwf.photopicker.widget.MultiPickResultView
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/recycler_view"/>
-
-        <Button
-            android:id="@+id/btn_submit"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="200dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/experter_apply"
-            style="@style/dialog_blue_button" />
-    </LinearLayout>
-
+    </ScrollView>
     <FrameLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
@@ -142,11 +223,5 @@
             android:textColor="#727272" >
         </com.nxt.ott.view.AudioRecorderButton>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#ccc" >
-        </View>
     </FrameLayout>
-
 </RelativeLayout>

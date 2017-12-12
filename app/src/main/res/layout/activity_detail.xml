@@ -4,179 +4,215 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context="com.nxt.ott.expertUpdate.DetailActivity">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include
-            android:id="@+id/common"
-            layout="@layout/common_title" />
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_title"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="3dp"
-            app:contentPadding="5dp"
-            app:layout_constraintTop_toBottomOf="@id/common">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="标题"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </android.support.v7.widget.CardView>
+            <include
+                android:id="@+id/common"
+                layout="@layout/common_title" />
 
-        <TextView
-            android:id="@+id/tag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:drawableLeft="@mipmap/tag"
-            android:drawablePadding="5dp"
-            android:text="问题详情"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/card_title"/>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cart2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_10"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="3dp"
-            app:contentPadding="3dp"
-            app:layout_constraintTop_toBottomOf="@id/tag">
-
-            <LinearLayout
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp"
+                app:contentPadding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/common">
 
                 <TextView
-                    android:id="@+id/info"
-                    android:layout_width="match_parent"
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/sp_14" />
-                <!--这里直接根据image数量直接add相应的imageview-->
+                    android:layout_gravity="center"
+                    android:text="标题"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@mipmap/tag"
+                android:drawablePadding="5dp"
+                android:text="问题详情"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/card_title"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cart2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp"
+                app:contentPadding="3dp"
+                app:layout_constraintTop_toBottomOf="@id/tag">
 
                 <LinearLayout
-                    android:id="@+id/llcontent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:visibility="gone"
-            android:id="@+id/cart4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            android:layout_marginTop="30dp"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="3dp"
-            app:contentPadding="5dp"
-            app:layout_constraintTop_toBottomOf="@id/cart2">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                android:orientation="horizontal">
-
-                <com.nxt.zyl.ui.widget.roundedimageview.CustomImageView
-                    android:id="@+id/avator"
-                    android:layout_width="140dp"
-                    android:layout_height="110dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher" />
-
-                <ScrollView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_14" />
+                    <!--这里直接根据image数量直接add相应的imageview-->
 
                     <LinearLayout
+                        android:id="@+id/llcontent"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical"
-                        android:padding="5dp">
-
-                        <TextView
-                            android:id="@+id/tv1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/sp_14" />
-
-                        <TextView
-                            android:id="@+id/tv2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/sp_14" />
-
-                        <TextView
-                            android:id="@+id/tv3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/sp_14" />
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                     </LinearLayout>
-                </ScrollView>
 
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+                </LinearLayout>
 
-        <TextView
-            android:visibility="gone"
-            android:id="@+id/tag2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:drawableLeft="@mipmap/tag"
-            android:drawablePadding="5dp"
-            android:text="专家回复"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/cart4" />
+            </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:visibility="gone"
-            android:id="@+id/cart3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_10"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="3dp"
-            app:contentPadding="5dp"
-            app:layout_constraintTop_toBottomOf="@id/tag2">
-
-            <TextView
-                android:id="@+id/hinfo"
+            <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:id="@+id/cart4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/sp_14" />
-        </android.support.v7.widget.CardView>
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp"
+                app:contentPadding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/cart2">
 
-    </android.support.constraint.ConstraintLayout>
-</ScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:orientation="horizontal">
+
+                    <com.nxt.zyl.ui.widget.roundedimageview.CustomImageView
+                        android:id="@+id/avator"
+                        android:layout_width="140dp"
+                        android:layout_height="110dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <ScrollView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/tv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/tv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/tv3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/sp_14" />
+
+                        </LinearLayout>
+                    </ScrollView>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@mipmap/tag"
+                android:drawablePadding="5dp"
+                android:text="专家回复"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/cart4" />
+
+            <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:id="@+id/cart3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp"
+                app:contentPadding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/tag2">
+
+                <TextView
+                    android:id="@+id/hinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_14" />
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:visibility="gone"
+                android:background="@drawable/shape_btn_reply"
+                android:id="@+id/btn_reply"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="48dp"
+                android:textColor="@color/white"
+                android:text="回复问题"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cart3" />
+
+            <Button
+                android:visibility="gone"
+                android:background="@drawable/shape_btn_refuse"
+                android:id="@+id/btn_refuse"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="驳回问题"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_reply" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+

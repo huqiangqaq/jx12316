@@ -2,6 +2,7 @@ package com.nxt.ott.expertUpdate;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -57,30 +58,31 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
     private ChooseAdapter adapter;
     private List<ChooseExperter.DataBean> experters;
     private int mTotalCount = 0;
-    private HashMap<String,String> params = new HashMap<>();
+    private HashMap<String, String> params = new HashMap<>();
 
 
     private enum ChooseType {
-         SEARCH, TYPE,LOAD,UPDATE
+        SEARCH, TYPE, LOAD, UPDATE
     }
 
     @Override
     protected void initView() {
-        initTopbar(this,"专家列表");
+        initTopbar(this, "专家列表");
         adapter = new ChooseAdapter();
         rv_experter.setLayoutManager(new LinearLayoutManager(this));
         rv_experter.setHasFixedSize(false);
         rv_experter.setNestedScrollingEnabled(false);
         rv_experter.setAdapter(adapter);
+        btn_search.setOnClickListener(this);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
+                startActivity(new Intent(ChooseActivity.this,AskActivity.class).putExtra("pid",experters.get(position).getId()).putExtra("isExperter",false));
             }
         });
-/**
- * EditText Search事件
- */
+        /**
+         * EditText Search事件
+         */
         et_text.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -113,13 +115,13 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
             }
         });
     }
+
     private void refresh(final ChooseType aDefault) {
-        adapter.setEnableLoadMore(false);
         GetRequest request = OkGo.get(Constant.EXPERTERLIST);
 
         switch (aDefault) {
             case SEARCH:
-                if (et_text.getText().toString().isEmpty()) {
+                if ("".equals(et_text.getText().toString())) {
                     ToastUtils.showShort(ChooseActivity.this, "请先输入搜索内容");
                     return;
                 }
@@ -162,7 +164,7 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
                     public void onSuccess(String s, Call call, Response response) {
                         types = new Gson().fromJson(s, new TypeToken<List<BaseExperter>>() {
                         }.getType());
-                        Log.i("huqiang",types.size()+"");
+                        Log.i("huqiang", types.size() + "");
                         btn_type.setOnClickListener(ChooseActivity.this);
                     }
                 });
@@ -193,7 +195,7 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
         AlertDialog.Builder builder = new AlertDialog.Builder(ChooseActivity.this);
         builder.setTitle("选择专家类型");
         String[] strings = new String[types.size()];
-        for (int i=0;i<types.size();i++){
+        for (int i = 0; i < types.size(); i++) {
             strings[i] = types.get(i).getAtype();
         }
         builder.setSingleChoiceItems(strings, 0, new DialogInterface.OnClickListener() {

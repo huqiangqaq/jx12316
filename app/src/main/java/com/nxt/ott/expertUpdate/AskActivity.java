@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -13,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -27,13 +27,14 @@ import com.nxt.ott.util.JsonUtils;
 import com.nxt.ott.util.MediaManager;
 import com.nxt.ott.util.ToastUtils;
 import com.nxt.ott.view.AudioRecorderButton;
-import com.nxt.zyl.util.ZPreferenceUtils;
 
 import net.bither.util.NativeUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -50,7 +51,7 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
 
     @BindView(R.id.yy)
     TextView yy;
-//    @BindView(R.id.pic)
+    //    @BindView(R.id.pic)
 //    TextView pic;
     @BindView(R.id.id_recorder_button)
     AudioRecorderButton mAudioRecorderButton;
@@ -62,33 +63,43 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
     MultiPickResultView resultView;
     @BindView(R.id.et_title)
     EditText et_title;
+    @BindView(R.id.phone)
+    EditText phone;
+    @BindView(R.id.phone2)
+    EditText phone2;
     @BindView(R.id.et_text)
     EditText et_text;
     @BindView(R.id.btn_submit)
     Button btn_submit;
     @BindView(R.id.rl_text)
     RelativeLayout rl_text;
+    @BindView(R.id.ll_user)
+    LinearLayout llUser;
+    @BindView(R.id.tag)
+    TextView tag;
     private FrameLayout animView;
     private List<Recorder> mDatas = new ArrayList<>();//保存储存的录音
     private ArrayList<String> imgPath = new ArrayList<>();//图片路径
-    private boolean isExperter = false;
-    private String tel,type,name;
-    public static final int PERMISSION_CODE=101;
+    private String pid,id;
+    public static final int PERMISSION_CODE = 101;
+    private boolean isExperter;
+
     @Override
     protected void initView() {
         Intent intent = getIntent();
-        if (intent!=null){
+        if (intent != null) {
+            pid = intent.getStringExtra("pid");
             isExperter = intent.getBooleanExtra("isExperter",false);
-            tel = intent.getStringExtra("uid");
-            type = intent.getStringExtra("type");
-            name = intent.getStringExtra("name");
-            if (name!=null){
-                initTopbar(this,"向"+name+"提问");
-            }else {
-                initTopbar(this,"提问");
-            }
+            id = intent.getStringExtra("id");
         }
-
+        if (isExperter){
+            llUser.setVisibility(View.GONE);
+            tag.setText("文字回复: ");
+            et_text.setHint("请输入您回复的详细内容");
+            initTopbar(this,"提问");
+        }else {
+            initTopbar(this,"回复");
+        }
         yy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +130,7 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
                 AnimationDrawable animation = (AnimationDrawable) animView.getBackground();
                 animation.start();
                 // 播放录音
-                MediaManager.playSound(mDatas.get(0).filePath,new MediaPlayer.OnCompletionListener() {
+                MediaManager.playSound(mDatas.get(0).filePath, new MediaPlayer.OnCompletionListener() {
 
                     @Override
                     public void onCompletion(MediaPlayer mp) {
@@ -145,25 +156,25 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
 
             }
         });
-        btn_submit.setOnClickListener(this );
+        btn_submit.setOnClickListener(this);
         rl_text.setOnClickListener(this);
         requirePermission();
 
     }
 
     private void requirePermission() {
-        String[] perms = {Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE};
-        if (EasyPermissions.hasPermissions(this,perms)){
-            resultView.init(this,MultiPickResultView.ACTION_SELECT,null);
-        }else {
-            EasyPermissions.requestPermissions(this,"需要照相、录音的权限",PERMISSION_CODE,perms);
+        String[] perms = {Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+        if (EasyPermissions.hasPermissions(this, perms)) {
+            resultView.init(this, MultiPickResultView.ACTION_SELECT, null);
+        } else {
+            EasyPermissions.requestPermissions(this, "需要照相、录音的权限", PERMISSION_CODE, perms);
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        EasyPermissions.onRequestPermissionsResult(requestCode,permissions,grantResults,this);
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
     @Override
@@ -192,22 +203,22 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        resultView.onActivityResult(1,resultCode,data);
-        switch (requestCode){
+        resultView.onActivityResult(1, resultCode, data);
+        switch (requestCode) {
             case 1:
-                if (data!=null){
+                if (data != null) {
                     imgPath = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
                 }
                 break;
-                default:
-                    break;
+            default:
+                break;
         }
     }
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        switch (v.getId()){
+        switch (v.getId()) {
 //            case tv_kind_experter:
 //                    showKindDialog();
 //                break;
@@ -218,8 +229,8 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
                 et_text.requestFocus();
                 toggleInput();
                 break;
-                default:
-                    break;
+            default:
+                break;
         }
     }
 
@@ -229,61 +240,93 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
     private void prepareSubmit() {
         et_text.clearFocus();
         String title = et_title.getText().toString().trim();
-        String text  = et_text.getText().toString().trim();
-        if (TextUtils.isEmpty(title)){
-            ToastUtils.showShort(this,"问题标签不能为空!");
+        String p = phone.getText().toString().trim();
+        String p2 = phone2.getText().toString().trim();
+        if (!TextUtils.equals(p, p2)) {
+            ToastUtils.showShort(AskActivity.this, "两次输入的手机号码不一致,请检查后重新输入");
             return;
         }
-        if (TextUtils.isEmpty(text)&&mDatas.isEmpty()&&imgPath.isEmpty()){
-            ToastUtils.showShort(this,"您至少需要提供问题详情,问题语音或问题图片其中一种");
+        String text = et_text.getText().toString().trim();
+        if (TextUtils.isEmpty(title)) {
+            ToastUtils.showShort(this, "问题标签不能为空!");
             return;
         }
-        if (title.length()<6){
-            ToastUtils.showShort(this,"标题不能少于六个字,请重新输入!");
+        if (TextUtils.isEmpty(text) && mDatas.isEmpty() && imgPath.isEmpty()) {
+            ToastUtils.showShort(this, "您至少需要提供问题详情,问题语音或问题图片其中一种");
             return;
         }
-       if (imgPath.size()>0){
+        if (title.length() < 6) {
+            ToastUtils.showShort(this, "标题不能少于六个字,请重新输入!");
+            return;
+        }
+        if (imgPath.size() > 0) {
             showLoadingDialog(R.string.handle_pic);
-            for (int i=0;i<imgPath.size();i++){
-                NativeUtil.compressBitmap(imgPath.get(i),imgPath.get(i));
+            for (int i = 0; i < imgPath.size(); i++) {
+                NativeUtil.compressBitmap(imgPath.get(i), imgPath.get(i));
             }
-
+            dismissloading();
         }
-        //点击提交传递数据给下一个页面
-        Bundle bundle = new Bundle();
-        bundle.putString("title",title);
-//        bundle.putString("point","全部");
-//        bundle.putString("pointNickName","全部");
-        bundle.putString("text",text);
-        bundle.putStringArrayList("img",imgPath);
-        bundle.putString("voice",mDatas.isEmpty()?"":mDatas.get(0).getFilePath());
-        bundle.putString("userName", ZPreferenceUtils.getPrefString(Constant.USERNAME,""));
-        bundle.putString("userNickName",ZPreferenceUtils.getPrefString(Constant.NICKNAME,""));
-//        bundle.putString("userName", EMClient.getInstance().getCurrentUser());
-//        bundle.putString("userNickName",DemoHelper.getInstance().getCurrentUserNick());
-        dismissloading();
+
+//        Map<String, String> map = new HashMap<>();
+//        map.put("title", title);
+//        map.put("text", text);
+//        map.put("userName", ZPreferenceUtils.getPrefString(Constant.USERNAME, ""));
+//        map.put("userNickName", ZPreferenceUtils.getPrefString(Constant.NICKNAME, ""));
+//        map.put("point", tel);
+//        map.put("type", type);
+//        map.put("pointNickName", name);
+//        upToServer(map, mDatas.isEmpty() ? "" : mDatas.get(0).getFilePath());
         if (isExperter){
-            Map<String,String> map = new HashMap<>();
-            map.put("title", title);
-            map.put("text", text);
-            map.put("userName",ZPreferenceUtils.getPrefString(Constant.USERNAME,""));
-            map.put("userNickName",ZPreferenceUtils.getPrefString(Constant.NICKNAME,""));
-            map.put("point",tel);
-            map.put("type", type);
-            map.put("pointNickName", name);
-            upToServer(map,mDatas.isEmpty()?"":mDatas.get(0).getFilePath());
+            OkGo.post(Constant.ANSWER)
+                    .params("id",id)
+                    .params("pid",pid)
+                    .params("htype","2")
+                    .params("info",et_text.getText().toString())
+                    .execute(new StringCallback() {
+                        @Override
+                        public void onSuccess(String s, Call call, Response response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(s);
+                                if (jsonObject.getString("result").equals("ok")){
+                                    ToastUtils.showShort(AskActivity.this,"回复成功!");
+                                    finish();
+                                }else {
+                                    ToastUtils.showShort(AskActivity.this,"回复失败,"+jsonObject.getString("msg"));
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
         }else {
-            Intent intent = new Intent(this,ExpertRecommedActivity.class);
-            intent.putExtras(bundle);
-            startActivity(intent);
-            finish();
+            OkGo.post(Constant.ASK)
+                    .params("uphone",phone.getText().toString())
+                    .params("pid",pid)
+                    .params("title",title)
+                    .params("info",text)
+                    .execute(new StringCallback() {
+                        @Override
+                        public void onSuccess(String s, Call call, Response response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(s);
+                                if (jsonObject.getString("result").equals("ok")){
+                                    ToastUtils.showShort(AskActivity.this,"问题提交成功,请等待专家回复!");
+                                }else {
+                                    ToastUtils.showShort(AskActivity.this,"提问失败,"+jsonObject.getString("msg"));
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
         }
 
     }
 
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
-        resultView.init(this,MultiPickResultView.ACTION_SELECT,null);
+        resultView.init(this, MultiPickResultView.ACTION_SELECT, null);
     }
 
     @Override
@@ -329,10 +372,11 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
 
     /**
      * 提交给服务器
+     *
      * @param map
      * @param voicePath
      */
-    private void upToServer(Map<String,String> map,String voicePath) {
+    private void upToServer(Map<String, String> map, String voicePath) {
         showLoadingDialog(R.string.hint_message);
         PostRequest request = OkGo.post(Constant.ADD_ISSUE);
         request.isMultipart(true);
@@ -348,10 +392,10 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
         request.execute(new StringCallback() {
             @Override
             public void onSuccess(String s, Call call, Response response) {
-                if ("1".equals(JsonUtils.getServerResult(s))){
+                if ("1".equals(JsonUtils.getServerResult(s))) {
                     dismissLoadingDialog();
                     new SweetAlertDialog(AskActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-                            .setContentText("您的问题已成功提交给"+name+",请耐心等候回答!")
+                            .setContentText("您的问题已成功提交给" + ",请耐心等候回答!")
                             .setConfirmText("好的!")
                             .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                 @Override
@@ -363,18 +407,19 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
                                 }
                             })
                             .show();
-                }else {
+                } else {
                     new SweetAlertDialog(AskActivity.this, SweetAlertDialog.ERROR_TYPE)
-                            .setContentText("提交失败:"+ JsonUtils.getServerMsg(s))
+                            .setContentText("提交失败:" + JsonUtils.getServerMsg(s))
                             .setConfirmText("好的!")
                             .show();
                 }
             }
+
             @Override
             public void onError(Call call, Response response, Exception e) {
                 super.onError(call, response, e);
                 dismissloading();
-                ToastUtils.showShort(AskActivity.this,e.toString());
+                ToastUtils.showShort(AskActivity.this, e.toString());
             }
         });
     }

@@ -1,8 +1,6 @@
 package com.nxt.ott.fragment;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -33,7 +31,6 @@ import com.nxt.ott.domain.Country;
 import com.nxt.ott.domain.ExpertType;
 import com.nxt.ott.domain.Experter;
 import com.nxt.ott.expertUpdate.AnswerList_Activity;
-import com.nxt.ott.expertUpdate.AskActivity;
 import com.nxt.ott.sweetAlert.SweetAlertDialog;
 import com.nxt.ott.util.JsonUtils;
 import com.nxt.ott.util.ToastUtils;
@@ -57,7 +54,7 @@ import okhttp3.Response;
  * Created by huqiang on 2017/5/11 9:57.
  */
 
-public class ExperterListFragment extends Fragment implements BaseQuickAdapter.RequestLoadMoreListener,ExperterAdapter2.onExperterClick {
+public class ExperterListFragment extends Fragment implements BaseQuickAdapter.RequestLoadMoreListener {
     private View view;
     private DropDownMenu mDropDownMenu;
     private String headers[] = {"省市", "县区", "专业"};
@@ -150,7 +147,6 @@ public class ExperterListFragment extends Fragment implements BaseQuickAdapter.R
                             mCurrentCounter = experterList.size();
                             experterAdapter = new ExperterAdapter2(R.layout.layout_experter_list, experterList,isRecommed);
                             contentView.setAdapter(experterAdapter);
-                            experterAdapter.setOnExperterClick(ExperterListFragment.this);
                             experterAdapter.setOnLoadMoreListener(ExperterListFragment.this,contentView);
                             experterAdapter.disableLoadMoreIfNotFullPage(contentView);
                             mDropDownMenu.setDropDownMenu(Arrays.asList(headers), popupViews, swipeRefreshLayout);
@@ -445,34 +441,34 @@ public class ExperterListFragment extends Fragment implements BaseQuickAdapter.R
         load();
     }
 
-    @Override
-    public void onExperterClickListener(View v, int position) {
-        if (isRecommed){
-            mDataMap.put("point", experterList.get(position).getUid());
-            mDataMap.put("type", experterList.get(position).getYewuzhuanchang());
-            mDataMap.put("pointNickName", "");
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage("确定把问题提交给这位专家吗?")
-                    .setPositiveButton("是的", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                            upToServer();
-                        }
-                    });
-            builder.setNegativeButton("不了", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
-            builder.show();
-        }else {
-            getActivity().startActivity(new Intent(getActivity(), AskActivity.class).putExtra("isExperter",true).putExtra("uid",experterList.get(position).getUid())
-                    .putExtra("type",experterList.get(position).getYewuzhuanchang()).putExtra("name",experterList.get(position).getName()));
-        }
-
-    }
+//    @Override
+//    public void onExperterClickListener(View v, int position) {
+//        if (isRecommed){
+//            mDataMap.put("point", experterList.get(position).getUid());
+//            mDataMap.put("type", experterList.get(position).getYewuzhuanchang());
+//            mDataMap.put("pointNickName", "");
+//            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+//            builder.setMessage("确定把问题提交给这位专家吗?")
+//                    .setPositiveButton("是的", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            dialog.dismiss();
+//                            upToServer();
+//                        }
+//                    });
+//            builder.setNegativeButton("不了", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    dialog.dismiss();
+//                }
+//            });
+//            builder.show();
+//        }else {
+//            getActivity().startActivity(new Intent(getActivity(), AskActivity.class).putExtra("isExperter",true).putExtra("uid",experterList.get(position).getUid())
+//                    .putExtra("type",experterList.get(position).getYewuzhuanchang()).putExtra("name",experterList.get(position).getName()));
+//        }
+//
+//    }
 
     /**
      * 提交给服务器

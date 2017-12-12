@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +17,11 @@ import com.nxt.ott.Constant;
 import com.nxt.ott.R;
 import com.nxt.ott.base.BaseTitleActivity;
 import com.nxt.ott.domain.Detail;
+import com.nxt.ott.util.ToastUtils;
+import com.nxt.zyl.util.ZPreferenceUtils;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,6 +55,10 @@ public class DetailActivity extends BaseTitleActivity {
     CardView cart3;
     @BindView(R.id.tag2)
     TextView tag2;
+    @BindView(R.id.btn_reply)
+    Button btnReply;
+    @BindView(R.id.btn_refuse)
+    Button btnRefuse;
     private List<String> imgs = new ArrayList<>();
 
 
@@ -61,6 +71,8 @@ public class DetailActivity extends BaseTitleActivity {
             id = intent.getStringExtra("id");
         }
         getData();
+
+
     }
 
     private void getData() {
@@ -82,6 +94,15 @@ public class DetailActivity extends BaseTitleActivity {
                                 tv2.setText("专家类型: "+detail.getZinfo().getType());
                                 tv3.setText("简介: " +detail.getZinfo().getInfo());
                                 hinfo.setText(detail.getHinfo());
+                                /**
+                                 * 根据是否在微信注册来判断是否加载回答和驳回按钮
+                                 */
+                                if (ZPreferenceUtils.getPrefBoolean(Constant.WXREGISTER,false)){
+                                    btnRefuse.setVisibility(View.VISIBLE);
+                                    btnReply.setVisibility(View.VISIBLE);
+                                    btnReply.setOnClickListener(DetailActivity.this);
+                                    btnRefuse.setOnClickListener(DetailActivity.this);
+                                }
                             }
                             String img = detail.getImg();
                             if (!TextUtils.isEmpty(img)){
@@ -108,5 +129,38 @@ public class DetailActivity extends BaseTitleActivity {
         return R.layout.activity_detail;
     }
 
-
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()){
+            //驳回问题
+            case R.id.btn_refuse:
+                    OkGo.post(Constant.ANSWER)
+                            .params("id",id)
+                            .params("pid",ZPreferenceUtils.getPrefString(Constant.PID,""))
+                            .params("htype","3")
+                            .execute(new StringCallback() {
+                                @Override
+                                public void onSuccess(String s, Call call, Response response) {
+                                    try {
+                                        JSONObject jsonObject = new JSONObject(s);
+                                        if (jsonObject.getString("result").equals("ok")){
+                                            ToastUtils.showShort(DetailActivity.this,"问题成功驳回!");
+                                            finish();
+                                        }else {
+                                            ToastUtils.showShort(DetailActivity.this,"问题驳回失败,"+jsonObject.getString("msg"));
+                                        }
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            });
+                break;
+            case R.id.btn_reply:
+                    startActivity(new Intent(DetailActivity.this,AskActivity.class).putExtra("isExperter",true).putExtra("id",id));
+                break;
+            default:
+                break;
+        }
+    }
 }

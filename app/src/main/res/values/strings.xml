@@ -498,9 +498,9 @@
     <string name="toast_no_support">暂不支持</string>
     <string name="dl_update_photo">更新头像</string>
     <string name="dl_waiting">请稍等…</string>
-    <string name="expert_ask_hint">请概述你的问题,不少于六个字</string>
-    <string name="experter_detail">请输入问题详情</string>
-    <string name="experter_apply">发布</string>
+    <string name="expert_ask_hint">请概述你的问题,控制在40字以内</string>
+    <string name="experter_detail">请提供您所在县区与提问的详细内容</string>
+    <string name="experter_apply">提交</string>
 
 
     <string name="call_version_inconsistent">通话协议版本不一致</string>

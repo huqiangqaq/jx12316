@@ -11,6 +11,7 @@ public class BaseExperter extends BaseType {
     @SerializedName("atype")
     private String atype;
 
+
     public String getAtype() {
         return atype;
     }

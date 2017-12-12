@@ -282,6 +282,10 @@ public class Constant {
     public static final String EXPERTER_TYPE = BASE_URL_EXPERTER+"/ztlistapi.php";
     //获取专家列表
     public static final String EXPERTERLIST = BASE_URL_EXPERTER+"/zlistapi.php";
+    //提问
+    public static final String ASK = BASE_URL_EXPERTER+"/utwapi.php";
+    //回答及驳回问题
+    public static final String ANSWER = BASE_URL_EXPERTER+"/zhuiapi.php";
     /**
      * 江西省测土配方施肥
      */

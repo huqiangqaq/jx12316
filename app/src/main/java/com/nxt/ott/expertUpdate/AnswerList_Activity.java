@@ -246,7 +246,7 @@ public class AnswerList_Activity extends AppCompatActivity implements View.OnCli
                         if (answers != null) {
                             if (answers.size() == 0) {
                                 AnswerListAdapter.setHeaderAndEmpty(true);
-                                tv_message.setText("暂无这个类别的问题！");
+                                tv_message.setText("没有找到相关的内容！");
                                 AnswerListAdapter.setEmptyView(view);
                             }
                             AnswerListAdapter.setNewData(answers);
