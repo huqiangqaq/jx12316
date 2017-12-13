@@ -128,16 +128,16 @@ public class Detail {
          * info : 面向三农提供政策法规、生产技术、市场信息等咨询服务。
          */
 
-        private Object img;
+        private String img;
         private String name;
         private String type;
         private String info;
 
-        public Object getImg() {
+        public String getImg() {
             return img;
         }
 
-        public void setImg(Object img) {
+        public void setImg(String img) {
             this.img = img;
         }
 

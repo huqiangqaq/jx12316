@@ -1,8 +1,8 @@
 package com.nxt.ott.expertUpdate;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -101,7 +101,7 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
      * 初始化swipeRefreshLayout
      */
     private void initSwipeRefreshLayout() {
-        refreshLayout.autoRefresh(200);
+        refreshLayout.autoRefresh();
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {

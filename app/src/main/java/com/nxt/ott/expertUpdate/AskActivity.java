@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,13 +31,9 @@ import com.nxt.ott.view.AudioRecorderButton;
 
 import net.bither.util.NativeUtil;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import me.iwf.photopicker.PhotoPicker;
@@ -83,6 +80,7 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
     private String pid,id;
     public static final int PERMISSION_CODE = 101;
     private boolean isExperter;
+    private String stype,questionId,asktype,askId;
 
     @Override
     protected void initView() {
@@ -91,6 +89,10 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
             pid = intent.getStringExtra("pid");
             isExperter = intent.getBooleanExtra("isExperter",false);
             id = intent.getStringExtra("id");
+            stype = intent.getStringExtra("stype");
+            questionId = intent.getStringExtra("questionId");
+            asktype = intent.getStringExtra("asktype");
+            askId = intent.getStringExtra("askId");
         }
         if (isExperter){
             llUser.setVisibility(View.GONE);
@@ -260,13 +262,11 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
             return;
         }
         if (imgPath.size() > 0) {
-            showLoadingDialog(R.string.handle_pic);
             for (int i = 0; i < imgPath.size(); i++) {
                 NativeUtil.compressBitmap(imgPath.get(i), imgPath.get(i));
             }
-            dismissloading();
         }
-
+            upToServer(mDatas.isEmpty() ? "" : mDatas.get(0).getFilePath());
 //        Map<String, String> map = new HashMap<>();
 //        map.put("title", title);
 //        map.put("text", text);
@@ -276,51 +276,55 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
 //        map.put("type", type);
 //        map.put("pointNickName", name);
 //        upToServer(map, mDatas.isEmpty() ? "" : mDatas.get(0).getFilePath());
-        if (isExperter){
-            OkGo.post(Constant.ANSWER)
-                    .params("id",id)
-                    .params("pid",pid)
-                    .params("htype","2")
-                    .params("info",et_text.getText().toString())
-                    .execute(new StringCallback() {
-                        @Override
-                        public void onSuccess(String s, Call call, Response response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(s);
-                                if (jsonObject.getString("result").equals("ok")){
-                                    ToastUtils.showShort(AskActivity.this,"回复成功!");
-                                    finish();
-                                }else {
-                                    ToastUtils.showShort(AskActivity.this,"回复失败,"+jsonObject.getString("msg"));
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-        }else {
-            OkGo.post(Constant.ASK)
-                    .params("uphone",phone.getText().toString())
-                    .params("pid",pid)
-                    .params("title",title)
-                    .params("info",text)
-                    .execute(new StringCallback() {
-                        @Override
-                        public void onSuccess(String s, Call call, Response response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(s);
-                                if (jsonObject.getString("result").equals("ok")){
-                                    ToastUtils.showShort(AskActivity.this,"问题提交成功,请等待专家回复!");
-                                }else {
-                                    ToastUtils.showShort(AskActivity.this,"提问失败,"+jsonObject.getString("msg"));
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-
-        }
+//        if (isExperter){
+//            OkGo.post(Constant.ANSWER)
+//                    .params("id",id)
+//                    .params("pid",pid)
+//                    .params("htype","2")
+//                    .params("info",et_text.getText().toString())
+//                    .params("stype",stype)
+//                    .params("questionId",questionId)
+//                    .params("asktype",asktype)
+//                    .params("askId",askId)
+//                    .execute(new StringCallback() {
+//                        @Override
+//                        public void onSuccess(String s, Call call, Response response) {
+//                            try {
+//                                JSONObject jsonObject = new JSONObject(s);
+//                                if (jsonObject.getString("result").equals("ok")){
+//                                    ToastUtils.showShort(AskActivity.this,"回复成功!");
+//                                    finish();
+//                                }else {
+//                                    ToastUtils.showShort(AskActivity.this,"回复失败,"+jsonObject.getString("msg"));
+//                                }
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    });
+//        }else {
+//            OkGo.post(Constant.ASK)
+//                    .params("uphone",phone.getText().toString())
+//                    .params("pid",pid)
+//                    .params("title",title)
+//                    .params("info",text)
+//                    .execute(new StringCallback() {
+//                        @Override
+//                        public void onSuccess(String s, Call call, Response response) {
+//                            try {
+//                                JSONObject jsonObject = new JSONObject(s);
+//                                if (jsonObject.getString("result").equals("ok")){
+//                                    ToastUtils.showShort(AskActivity.this,"问题提交成功,请等待专家回复!");
+//                                }else {
+//                                    ToastUtils.showShort(AskActivity.this,"提问失败,"+jsonObject.getString("msg"));
+//                                }
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    });
+//
+//        }
 
     }
 
@@ -373,14 +377,12 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
     /**
      * 提交给服务器
      *
-     * @param map
      * @param voicePath
      */
-    private void upToServer(Map<String, String> map, String voicePath) {
+    private void upToServer( String voicePath) {
         showLoadingDialog(R.string.hint_message);
         PostRequest request = OkGo.post(Constant.ADD_ISSUE);
         request.isMultipart(true);
-        request.params(map);
         if (imgPath.size() > 0) {
             for (int i = 0; i < imgPath.size(); i++) {
                 request.params("img" + i, new File(imgPath.get(i)));
@@ -392,6 +394,7 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
         request.execute(new StringCallback() {
             @Override
             public void onSuccess(String s, Call call, Response response) {
+                Log.i("huqiang",s);
                 if ("1".equals(JsonUtils.getServerResult(s))) {
                     dismissLoadingDialog();
                     new SweetAlertDialog(AskActivity.this, SweetAlertDialog.SUCCESS_TYPE)
@@ -418,6 +421,7 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
             @Override
             public void onError(Call call, Response response, Exception e) {
                 super.onError(call, response, e);
+                Log.i("huqiang",e.toString());
                 dismissloading();
                 ToastUtils.showShort(AskActivity.this, e.toString());
             }

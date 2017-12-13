@@ -27,23 +27,24 @@
             android:background="@drawable/bg_line"
             android:imeOptions="actionSearch"
             android:maxLines="1"
-            android:hint="请输入专家名称"/>
+            android:hint="请输入专家名称"
+            android:textSize="@dimen/sp_16"/>
         <Button
             android:textColor="@color/white"
             android:id="@+id/btn_search"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="搜索"
-            android:background="@drawable/bg_shape_title"/>
+            android:background="@drawable/shape_btn_reply"/>
         <Button
             android:textColor="@color/white"
             android:id="@+id/btn_type"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="专家类型"
-            android:background="@drawable/bg_shape_title"
+            android:background="@drawable/shape_btn_refuse"
             android:layout_marginRight="5dp"/>
 
     </LinearLayout>

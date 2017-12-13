@@ -350,6 +350,8 @@ public class MyLoginActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.tv_register:
                 startActivity(new Intent(this, RegisterStepOneActivity.class));
                 break;
+            default:
+                break;
         }
     }
 
@@ -372,9 +374,9 @@ public class MyLoginActivity extends AppCompatActivity implements View.OnClickLi
                             Toast.LENGTH_SHORT).show();
                     exitTime = System.currentTimeMillis();
                 } else {
-                    moveTaskToBack(false);
-                    MyApplication.getInstance().exit();//关闭栈中的activity
-                    System.exit(0);
+                    moveTaskToBack(true);
+//                    MyApplication.getInstance().exit();//关闭栈中的activity
+//                    System.exit(0);
                 }
             }
             return true;

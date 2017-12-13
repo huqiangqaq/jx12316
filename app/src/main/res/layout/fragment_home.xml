@@ -274,16 +274,16 @@
                         android:textSize="14sp"
                         android:id="@+id/textView4" />
 
-                    <TextView
+                    <com.nxt.ott.view.RunTextView
                         android:id="@+id/tv_experter_suggest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:ellipsize="marquee"
                         android:focusable="true"
-                        android:focusableInTouchMode="true"
                         android:marqueeRepeatLimit="marquee_forever"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"/>
 
                 </LinearLayout>
             </LinearLayout>

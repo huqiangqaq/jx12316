@@ -240,8 +240,8 @@ public class Constant {
     //http://192.168.0.80:8888/manage-12316
             //http://expert.jx.gnb360.cn
     public static final String BASE_URL_EXPERTER = "http://v426.nyt.bd.ej38.com/plugin/aoya/notebook";
-    //提交问题
-    public static final String ADD_ISSUE = BASE_URL_EXPERTER+"/addIssue";
+    //提交图片和语音文件并获取服务器图片、语音地址
+    public static final String ADD_ISSUE ="http://expert.jx.gnb360.cn/addIssue";
     //查询活跃专家以及不活跃专家
     public static final String GET_RECOMMMEND_EXPERTER = BASE_URL_EXPERTER +"/loadActiveBinding";
     //问题列表

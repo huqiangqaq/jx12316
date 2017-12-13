@@ -60,11 +60,10 @@ public class DetailActivity extends BaseTitleActivity {
     @BindView(R.id.btn_refuse)
     Button btnRefuse;
     private List<String> imgs = new ArrayList<>();
-
+    private Detail detail;
 
     @Override
     protected void initView() {
-        application.addActivity(this);
         initTopbar(this,"问题详情");
         Intent intent = getIntent();
         if (intent!=null){
@@ -81,7 +80,7 @@ public class DetailActivity extends BaseTitleActivity {
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
-                        Detail detail = new Gson().fromJson(s,Detail.class);
+                         detail = new Gson().fromJson(s,Detail.class);
                         if (detail!=null){
                             title.setText(detail.getTitle());
                             info.setText(detail.getInfo());
@@ -157,7 +156,9 @@ public class DetailActivity extends BaseTitleActivity {
                             });
                 break;
             case R.id.btn_reply:
-                    startActivity(new Intent(DetailActivity.this,AskActivity.class).putExtra("isExperter",true).putExtra("id",id));
+                    startActivity(new Intent(DetailActivity.this,AskActivity.class).putExtra("isExperter",true).putExtra("id",id)
+                    .putExtra("stype",detail.getStype()).putExtra("questionId",detail.getQuestionId())
+                    .putExtra("asktype",detail.getAsktype()).putExtra("askId",detail.getAskId()));
                 break;
             default:
                 break;

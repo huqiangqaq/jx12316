@@ -573,10 +573,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Toast.LENGTH_SHORT).show();
                     exitTime = System.currentTimeMillis();
                 } else {
-//                    moveTaskToBack(true);
+                    moveTaskToBack(true);
                     ZPreferenceUtils.setPrefInt(Constant.PUSHCOUNT,0);
-                    MyApplication.getInstance().exit();//关闭栈中的activity
-                    System.exit(0);
+//                    MyApplication.getInstance().exit();//关闭栈中的activity
+//                    System.exit(0);
                 }
             }
             return true;

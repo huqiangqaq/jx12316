@@ -213,7 +213,7 @@
     <string name="str_recorder_want_cancel">松开手指，取消发送</string>
     <string name="hint_reply">回复 "%s"</string>
     <string name="hint_comment">我也说一句</string>
-    <string name="hint_message">正在提交你的问题,请稍后！</string>
+    <string name="hint_message">正在上传...</string>
     <string name="kind_message">正在为您筛选专家！</string>
     <string name="hp">确定好评吗?</string>
     <string name="zp">确定中评吗?</string>
