@@ -4,221 +4,327 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="#FAE0C0"
+    android:fillViewport="true"
     tools:context="com.nxt.ott.expertUpdate.DetailActivity">
 
-        <android.support.constraint.ConstraintLayout
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/common"
+            layout="@layout/common_title" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include
-                android:id="@+id/common"
-                layout="@layout/common_title" />
-
-            <android.support.v7.widget.CardView
-                app:cardBackgroundColor="#FCEFDF"
-                android:id="@+id/card_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_10"
-                android:layout_marginRight="@dimen/dp_10"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="3dp"
-                app:contentPadding="5dp"
-                app:layout_constraintTop_toBottomOf="@id/common">
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="标题"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-            </android.support.v7.widget.CardView>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#FCEFDF"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:contentPadding="5dp"
+            app:layout_constraintTop_toBottomOf="@id/common">
 
             <TextView
-                android:id="@+id/tag"
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:drawableLeft="@mipmap/tag"
-                android:drawablePadding="5dp"
-                android:text="问题详情"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/card_title"/>
+                android:layout_gravity="center"
+                android:text="标题"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cart2"
+        <TextView
+            android:id="@+id/tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@mipmap/tag"
+            android:drawablePadding="5dp"
+            android:text="问题详情"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/card_title" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cart2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            app:cardBackgroundColor="#FCEFDF"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:contentPadding="3dp"
+            app:layout_constraintTop_toBottomOf="@id/tag">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_10"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="3dp"
-                app:contentPadding="3dp"
-                app:cardBackgroundColor="#FCEFDF"
-                app:layout_constraintTop_toBottomOf="@id/tag">
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="395dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_14"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="308dp" />
+                <!--这里直接根据image数量直接add相应的imageview-->
 
                 <LinearLayout
+                    android:id="@+id/llcontent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/info"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/sp_14" />
-                    <!--这里直接根据image数量直接add相应的imageview-->
-
-                    <LinearLayout
-                        android:id="@+id/llcontent"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                    </LinearLayout>
-
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </LinearLayout>
 
-            <android.support.v7.widget.CardView
-                app:cardBackgroundColor="#FCEFDF"
-                android:visibility="gone"
-                android:id="@+id/cart4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_10"
-                android:layout_marginRight="@dimen/dp_10"
-                android:layout_marginTop="30dp"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="3dp"
-                app:contentPadding="5dp"
-                app:layout_constraintTop_toBottomOf="@id/cart2">
+        </android.support.v7.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:orientation="horizontal">
-
-                    <com.nxt.zyl.ui.widget.roundedimageview.CustomImageView
-                        android:id="@+id/avator"
-                        android:layout_width="140dp"
-                        android:layout_height="110dp"
-                        android:scaleType="fitXY"
-                        android:src="@mipmap/ic_launcher" />
-
-                    <ScrollView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/dp_10"
-                        android:layout_weight="1">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:orientation="vertical"
-                            android:padding="5dp">
-
-                            <TextView
-                                android:id="@+id/tv1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="@dimen/sp_14" />
-
-                            <TextView
-                                android:id="@+id/tv2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="@dimen/sp_14" />
-
-                            <TextView
-                                android:id="@+id/tv3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="@dimen/sp_14" />
-
-                        </LinearLayout>
-                    </ScrollView>
-
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_ask"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/cart2">
 
             <TextView
-                android:visibility="gone"
-                android:id="@+id/tag2"
+                android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:drawableLeft="@mipmap/tag"
-                android:drawablePadding="5dp"
-                android:text="专家回复"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/cart4"
-                />
+                android:textSize="@dimen/sp_14"
+                android:text="提问语音："/>
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/icon"
+                    android:id="@+id/icon"
+                    />
+                <FrameLayout
+                    android:id="@+id/id_recoder_anim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/icon"
+                    android:background="@mipmap/adj">
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/id_recoder_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/id_recoder_anim"
+                    android:layout_marginRight="3dp"
+                    android:textColor="#ff777777"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
 
-            <android.support.v7.widget.CardView
-                android:visibility="gone"
-                android:id="@+id/cart3"
+        <android.support.v7.widget.CardView
+            android:id="@+id/cart4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="#FCEFDF"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:contentPadding="5dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_ask">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_10"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="3dp"
-                app:contentPadding="5dp"
-                app:layout_constraintTop_toBottomOf="@id/tag2"
-                app:cardBackgroundColor="#FCEFDF">
+                android:layout_margin="6dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/hinfo"
-                    android:layout_width="match_parent"
+                <com.nxt.zyl.ui.widget.roundedimageview.CustomImageView
+                    android:id="@+id/avator"
+                    android:layout_width="140dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher" />
+
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/sp_14" />
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/sp_14" />
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/sp_14" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/tag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@mipmap/tag"
+            android:drawablePadding="5dp"
+            android:text="专家回复"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cart4" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cart3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:visibility="gone"
+            app:cardBackgroundColor="#FCEFDF"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:contentPadding="5dp"
+            app:layout_constraintTop_toBottomOf="@id/tag2">
+
+            <TextView
+                android:id="@+id/hinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_14" />
+            <!--这里直接根据image数量直接add相应的imageview-->
+
+            <LinearLayout
+                android:id="@+id/llcontent_zj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_answer"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/cart3">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_14"
+                android:text="提问语音："/>
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@mipmap/icon"
+                    android:id="@+id/icon2"
+                    />
+                <FrameLayout
+                    android:id="@+id/id_recoder_anim2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/sp_14" />
-            </android.support.v7.widget.CardView>
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/icon2"
+                    android:background="@mipmap/adj">
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/id_recoder_time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/id_recoder_anim2"
+                    android:layout_marginRight="3dp"
+                    android:textColor="#ff777777"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
 
-            <Button
-                android:visibility="gone"
-                android:background="@drawable/shape_btn_reply"
-                android:id="@+id/btn_reply"
-                android:layout_width="270dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="48dp"
-                android:textColor="@color/white"
-                android:text="回复问题"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cart3" />
+        <Button
+            android:id="@+id/btn_reply"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/shape_btn_reply"
+            android:text="回复问题"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_answer" />
 
-            <Button
-                android:visibility="gone"
-                android:background="@drawable/shape_btn_refuse"
-                android:id="@+id/btn_refuse"
-                android:layout_width="270dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:text="驳回问题"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_reply" />
-        </android.support.constraint.ConstraintLayout>
-    </ScrollView>
+        <Button
+            android:id="@+id/btn_refuse"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_btn_refuse"
+            android:text="驳回问题"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_reply" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
 
 

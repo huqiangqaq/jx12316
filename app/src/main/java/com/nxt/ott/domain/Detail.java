@@ -25,6 +25,9 @@ public class Detail {
     private String title;
     private String info;
     private String img;
+    private String zimg;
+    private String zurl;
+    private String turl;
     private ZinfoBean zinfo;
     private String hinfo;
     private String stype;
@@ -118,6 +121,30 @@ public class Detail {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getZimg() {
+        return zimg;
+    }
+
+    public void setZimg(String zimg) {
+        this.zimg = zimg;
+    }
+
+    public String getZurl() {
+        return zurl;
+    }
+
+    public void setZurl(String zurl) {
+        this.zurl = zurl;
+    }
+
+    public String getTurl() {
+        return turl;
+    }
+
+    public void setTurl(String turl) {
+        this.turl = turl;
     }
 
     public static class ZinfoBean {

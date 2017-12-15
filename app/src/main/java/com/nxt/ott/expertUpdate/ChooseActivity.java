@@ -101,7 +101,6 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
      * 初始化swipeRefreshLayout
      */
     private void initSwipeRefreshLayout() {
-        refreshLayout.autoRefresh();
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
