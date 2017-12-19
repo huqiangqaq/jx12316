@@ -23,10 +23,12 @@ import com.lzy.okgo.request.PostRequest;
 import com.nxt.ott.Constant;
 import com.nxt.ott.R;
 import com.nxt.ott.base.BaseTitleActivity;
+import com.nxt.ott.util.DialogHelper;
 import com.nxt.ott.util.JsonUtils;
 import com.nxt.ott.util.MediaManager;
 import com.nxt.ott.util.ToastUtils;
 import com.nxt.ott.view.AudioRecorderButton;
+import com.nxt.zyl.util.ZPreferenceUtils;
 
 import net.bither.util.NativeUtil;
 
@@ -34,6 +36,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,9 +87,11 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
     private boolean isExperter;
     private String stype, questionId, asktype, askId;
     private String voice = "",img = "";
+    private boolean haveImgOrVoice = false;
 
     @Override
     protected void initView() {
+        Socket
         Intent intent = getIntent();
         if (intent != null) {
             pid = intent.getStringExtra("pid");
@@ -101,9 +106,9 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
             llUser.setVisibility(View.GONE);
             tag.setText("文字回复: ");
             et_text.setHint("请输入您回复的详细内容");
-            initTopbar(this, "提问");
-        } else {
             initTopbar(this, "回复");
+        } else {
+            initTopbar(this, "提问");
         }
         yy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,18 +257,22 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
             return;
         }
         text = et_text.getText().toString().trim();
-        if (TextUtils.isEmpty(title)) {
-            ToastUtils.showShort(this, "问题标签不能为空!");
-            return;
+        if (!isExperter){
+            if (TextUtils.isEmpty(title)) {
+                ToastUtils.showShort(this, "问题标签不能为空!");
+                return;
+            }
+            if (title.length() < 6) {
+                ToastUtils.showShort(this, "标题不能少于六个字,请重新输入!");
+                return;
+            }
         }
+
         if (TextUtils.isEmpty(text) && mDatas.isEmpty() && imgPath.isEmpty()) {
             ToastUtils.showShort(this, "您至少需要提供问题详情,问题语音或问题图片其中一种");
             return;
         }
-        if (title.length() < 6) {
-            ToastUtils.showShort(this, "标题不能少于六个字,请重新输入!");
-            return;
-        }
+
         if (imgPath.size() > 0) {
             for (int i = 0; i < imgPath.size(); i++) {
                 NativeUtil.compressBitmap(imgPath.get(i), imgPath.get(i));
@@ -341,109 +350,138 @@ public class AskActivity extends BaseTitleActivity implements EasyPermissions.Pe
             for (int i = 0; i < imgPath.size(); i++) {
                 request.params("img" + i, new File(imgPath.get(i)));
             }
+            haveImgOrVoice = true;
         }
         if (!TextUtils.isEmpty(voicePath)) {
             request.params("voiceFile", new File(voicePath));
+            haveImgOrVoice = true;
         }
-        request.execute(new StringCallback() {
-            @Override
-            public void onSuccess(String s, Call call, Response response) {
-                //{"voice":"/upload/56569f64-81d0-418a-8a7e-5cff10938100.mp3","msg":"添加成功！","img":"/upload/IMG_20171212_173136_BURST1.jpg,/upload/1512347954342.jpg","code":"1"}
-                Log.i("huqiang",s);
-                if ("1".equals(JsonUtils.getServerResult(s))) {
-                    try {
-                        JSONObject object = new JSONObject(s);
-                        voice = object.getString("voice");
-                        img = object.getString("img");
-                        if (isExperter) {
-                            OkGo.post(Constant.ANSWER)
-                                    .params("id", id)
-                                    .params("pid", pid)
-                                    .params("htype", "2")
-                                    .params("info", et_text.getText().toString())
-                                    .params("stype", stype)
-                                    .params("questionId", questionId)
-                                    .params("asktype", asktype)
-                                    .params("askId", askId)
-                                    .params("imgs",img)
-                                    .params("hyuaddress",voice)
-                                    .execute(new StringCallback() {
-                                        @Override
-                                        public void onSuccess(String s, Call call, Response response) {
-                                            try {
-                                                JSONObject jsonObject = new JSONObject(s);
-                                                if (jsonObject.getString("result").equals("ok")) {
-                                                    ToastUtils.showShort(AskActivity.this, "回复成功!");
-                                                    finish();
-                                                } else {
-                                                    ToastUtils.showShort(AskActivity.this, "回复失败," + jsonObject.getString("msg"));
-                                                }
-                                            } catch (JSONException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    });
-                        } else {
-                            OkGo.post(Constant.ASK)
-                                    .params("uphone", phone.getText().toString())
-                                    .params("pid", pid)
-                                    .params("title", title)
-                                    .params("info", text)
-                                    .params("tpicall",img)
-                                    .params("tyuaddress",voice)
-                                    .execute(new StringCallback() {
-                                        @Override
-                                        public void onSuccess(String s, Call call, Response response) {
-                                            dismissLoadingDialog();
-                                            try {
-                                                JSONObject jsonObject = new JSONObject(s);
-                                                if (jsonObject.getString("result").equals("ok")) {
-                                                    ToastUtils.showShort(AskActivity.this, "问题提交成功,请等待专家回复!");
-                                                    finish();
-                                                } else {
-                                                    ToastUtils.showShort(AskActivity.this, "提问失败," + jsonObject.getString("msg"));
-                                                }
-                                            } catch (JSONException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    });
-
+        if (haveImgOrVoice){
+            request.execute(new StringCallback() {
+                @Override
+                public void onSuccess(String s, Call call, Response response) {
+                    if ("1".equals(JsonUtils.getServerResult(s))){
+                        JSONObject object = null;
+                        try {
+                            object = new JSONObject(s);
+                            voice = object.getString("voice");
+                            img = object.getString("img");
+                            linkWx();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+
                     }
                 }
-//                if ("1".equals(JsonUtils.getServerResult(s))) {
-//                    dismissLoadingDialog();
-//                    new SweetAlertDialog(AskActivity.this, SweetAlertDialog.SUCCESS_TYPE)
-//                            .setContentText("您的问题已成功提交给" + ",请耐心等候回答!")
-//                            .setConfirmText("好的!")
-//                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-//                                @Override
-//                                public void onClick(SweetAlertDialog sweetAlertDialog) {
-//                                    sweetAlertDialog.dismiss();
-//                                    //回到首页
-//                                    startActivity(new Intent(AskActivity.this, AnswerList_Activity.class));
-//                                    finish();
-//                                }
-//                            })
-//                            .show();
-//                } else {
-//                    new SweetAlertDialog(AskActivity.this, SweetAlertDialog.ERROR_TYPE)
-//                            .setContentText("提交失败:" + JsonUtils.getServerMsg(s))
-//                            .setConfirmText("好的!")
-//                            .show();
-//                }
-            }
-
-            @Override
-            public void onError(Call call, Response response, Exception e) {
-                super.onError(call, response, e);
-                dismissLoadingDialog();
-                ToastUtils.showShort(AskActivity.this, e.toString());
-            }
-        });
+                @Override
+                public void onError(Call call, Response response, Exception e) {
+                    super.onError(call, response, e);
+                    dismissLoadingDialog();
+                    ToastUtils.showShort(AskActivity.this, e.toString());
+                }
+            });
+        }else {
+            linkWx();
+        }
     }
 
+    private void linkWx(){
+        if (isExperter) {
+            OkGo.post(Constant.ANSWER)
+                    .params("id", id)
+                    .params("pid", ZPreferenceUtils.getPrefString(Constant.PID, ""))
+                    .params("htype", "2")
+                    .params("info", et_text.getText().toString())
+                    .params("stype", stype)
+                    .params("questionId", questionId)
+                    .params("asktype", asktype)
+                    .params("askId", askId)
+                    .params("imgs",img)
+                    .params("hyuaddress",voice)
+                    .execute(new StringCallback() {
+                        @Override
+                        public void onSuccess(String s, Call call, Response response) {
+                            dismissLoadingDialog();
+                            Log.i("huqiang",s+"stype:"+stype);
+                            try {
+                                JSONObject jsonObject = new JSONObject(s);
+                                if (jsonObject.getString("result").equals("ok")) {
+                                    DialogHelper.showDialog(AskActivity.this, "提示", "回复成功!!", new DialogHelper.OnOkClickListener() {
+                                        @Override
+                                        public void onOkClick() {
+                                            finish();
+                                        }
+                                    }, new DialogHelper.OnCancelClickListener() {
+                                        @Override
+                                        public void onCancelClick() {
+
+                                        }
+                                    });
+
+
+                                } else {
+                                    DialogHelper.showDialog(AskActivity.this, "提示", "回复失败"+ jsonObject.getString("msg"), new DialogHelper.OnOkClickListener() {
+                                        @Override
+                                        public void onOkClick() {
+                                            finish();
+                                        }
+                                    }, new DialogHelper.OnCancelClickListener() {
+                                        @Override
+                                        public void onCancelClick() {
+
+                                        }
+                                    });
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+        } else {
+            OkGo.post(Constant.ASK)
+                    .params("uphone", phone.getText().toString())
+                    .params("pid", pid)
+                    .params("title", title)
+                    .params("info", text)
+                    .params("tpicall",img)
+                    .params("tyuaddress",voice)
+                    .execute(new StringCallback() {
+                        @Override
+                        public void onSuccess(String s, Call call, Response response) {
+                            dismissLoadingDialog();
+                            try {
+                                JSONObject jsonObject = new JSONObject(s);
+                                if (jsonObject.getString("result").equals("ok")) {
+                                    DialogHelper.showDialog(AskActivity.this, "提示", "问题提交成功,请等待专家回复!!", new DialogHelper.OnOkClickListener() {
+                                        @Override
+                                        public void onOkClick() {
+                                            finish();
+                                        }
+                                    }, new DialogHelper.OnCancelClickListener() {
+                                        @Override
+                                        public void onCancelClick() {
+
+                                        }
+                                    });
+                                } else {
+                                    DialogHelper.showDialog(AskActivity.this, "如何注册成为会员?","取消","提示", "提问失败," + jsonObject.getString("msg"), new DialogHelper.OnOkClickListener() {
+                                        @Override
+                                        public void onOkClick() {
+                                            startActivity(new Intent(AskActivity.this,GuideExperterActivity.class).putExtra("isExperter",false));
+                                        }
+                                    }, new DialogHelper.OnCancelClickListener() {
+                                        @Override
+                                        public void onCancelClick() {
+
+                                        }
+                                    });
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
+        }
+    }
 }

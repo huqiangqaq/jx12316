@@ -269,10 +269,6 @@
         <activity android:name=".activity.PictureScan" />
         <activity android:name=".AllActivity" />
         <activity
-            android:name=".expertUpdate.AnswerListActivity"
-            android:launchMode="singleTask"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity
             android:name=".expertUpdate.CommentActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
@@ -302,7 +298,6 @@
             android:name=".receiver.MyReceiver"
             android:exported="false" />
 
-        <activity android:name=".expertUpdate.QuestionListActivity" />
         <activity android:name=".activity.account.UserProfileActivity" />
         <activity android:name=".activity.account.RegisterActivity" />
         <activity android:name=".expertUpdate.ExperterListActivity" />
@@ -428,7 +423,8 @@
         <activity android:name=".activity.wisdom.WisdomActivity" />
         <activity android:name=".activity.doctor.DoctorMenuActivity" />
         <activity android:name=".expertUpdate.DetailActivity" />
-        <activity android:name=".expertUpdate.ChooseActivity"></activity>
+        <activity android:name=".expertUpdate.ChooseActivity" />
+        <activity android:name=".expertUpdate.GuideExperterActivity"></activity>
     </application>
 
 </manifest>

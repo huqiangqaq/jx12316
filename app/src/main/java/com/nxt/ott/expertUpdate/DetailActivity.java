@@ -22,8 +22,9 @@ import com.nxt.ott.Constant;
 import com.nxt.ott.R;
 import com.nxt.ott.base.BaseTitleActivity;
 import com.nxt.ott.domain.Detail;
+import com.nxt.ott.sweetAlert.SweetAlertDialog;
+import com.nxt.ott.util.DialogHelper;
 import com.nxt.ott.util.MediaManager;
-import com.nxt.ott.util.ToastUtils;
 import com.nxt.zyl.util.ZPreferenceUtils;
 
 import org.json.JSONException;
@@ -98,7 +99,7 @@ public class DetailActivity extends BaseTitleActivity {
                     public void onSuccess(String s, Call call, Response response) {
                         detail = new Gson().fromJson(s, Detail.class);
                         if (detail != null && "ok".equals(detail.getResult())) {
-                            if (!"no".equals(detail.getTurl())) {
+                            if (!"no".equals(detail.getTurl())&&!"http://expert.jx.gnb360.cn".equals(detail.getTurl())) {
                                 ll_ask.setVisibility(View.VISIBLE);
                                 ll_ask.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -107,7 +108,8 @@ public class DetailActivity extends BaseTitleActivity {
                                     }
                                 });
                             }
-                            if (!"no".equals(detail.getZurl())) {
+                            if (!"no".equals(detail.getZurl())&&!"http://expert.jx.gnb360.cn".equals(detail.getZurl())) {
+                                Log.i("huqiang",detail.getZurl());
                                 ll_answer.setVisibility(View.VISIBLE);
                                 ll_answer.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -115,6 +117,15 @@ public class DetailActivity extends BaseTitleActivity {
                                         playVoice(detail.getZurl(), animView2);
                                     }
                                 });
+                            }
+                            /**
+                             * 根据详情接口中的zid和专家详情里的id是否匹配来判断是否加载回复和驳回按钮
+                             */
+                            if (TextUtils.equals(detail.getZid(),ZPreferenceUtils.getPrefString(Constant.PID, ""))) {
+                                btnRefuse.setVisibility(View.VISIBLE);
+                                btnReply.setVisibility(View.VISIBLE);
+                                btnReply.setOnClickListener(DetailActivity.this);
+                                btnRefuse.setOnClickListener(DetailActivity.this);
                             }
                             title.setText(detail.getTitle());
                             info.setText(detail.getInfo());
@@ -127,14 +138,7 @@ public class DetailActivity extends BaseTitleActivity {
                                 tv2.setText("专家类型: " + detail.getZinfo().getType());
                                 tv3.setText("简介: " + detail.getZinfo().getInfo());
                                 hinfo.setText(detail.getHinfo());
-                                /**
-                                 * 根据是否在微信注册来判断是否加载回答和驳回按钮
-                                 */
-                                if (ZPreferenceUtils.getPrefBoolean(Constant.WXREGISTER, false)) {
-                                    btnRefuse.setVisibility(View.VISIBLE);
-                                    btnReply.setVisibility(View.VISIBLE);
-                                    btnReply.setOnClickListener(DetailActivity.this);
-                                    btnRefuse.setOnClickListener(DetailActivity.this);
+
                                 }
                             }
 //                            String img = detail.getImg();
@@ -160,7 +164,6 @@ public class DetailActivity extends BaseTitleActivity {
                                 llcontent_zj.addView(imageView);
                             }
                         }
-                    }
                 });
     }
 
@@ -175,6 +178,7 @@ public class DetailActivity extends BaseTitleActivity {
         switch (v.getId()) {
             //驳回问题
             case R.id.btn_refuse:
+                Log.i("huqiang","pid"+ZPreferenceUtils.getPrefString(Constant.PID,""));
                 OkGo.post(Constant.ANSWER)
                         .params("id", id)
                         .params("pid", ZPreferenceUtils.getPrefString(Constant.PID, ""))
@@ -184,11 +188,26 @@ public class DetailActivity extends BaseTitleActivity {
                             public void onSuccess(String s, Call call, Response response) {
                                 try {
                                     JSONObject jsonObject = new JSONObject(s);
-                                    if (jsonObject.getString("result").equals("ok")) {
-                                        ToastUtils.showShort(DetailActivity.this, "问题成功驳回!");
-                                        finish();
+                                    if ("ok".equals(jsonObject.getString("result"))) {
+                                        new SweetAlertDialog(DetailActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                                                .setContentText("问题驳回成功!")
+                                                .show();
+                                        DialogHelper.showDialog(DetailActivity.this, "提示", "问题驳回成功!", new DialogHelper.OnOkClickListener() {
+                                            @Override
+                                            public void onOkClick() {
+                                                finish();
+                                            }
+                                        }, new DialogHelper.OnCancelClickListener() {
+                                            @Override
+                                            public void onCancelClick() {
+
+                                            }
+                                        });
+
                                     } else {
-                                        ToastUtils.showShort(DetailActivity.this, "问题驳回失败," + jsonObject.getString("msg"));
+                                        new SweetAlertDialog(DetailActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                                .setContentText("问题驳回失败," + jsonObject.getString("msg"))
+                                                .show();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -201,6 +220,7 @@ public class DetailActivity extends BaseTitleActivity {
                 startActivity(new Intent(DetailActivity.this, AskActivity.class).putExtra("isExperter", true).putExtra("id", id)
                         .putExtra("stype", detail.getStype()).putExtra("questionId", detail.getQuestionId())
                         .putExtra("asktype", detail.getAsktype()).putExtra("askId", detail.getAskId()));
+                finish();
                 break;
             default:
                 break;

@@ -48,6 +48,8 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
     Button btn_search;
     @BindView(R.id.btn_type)
     Button btn_type;
+    @BindView(R.id.btn_register)
+    Button btnRegister;
     @BindView(R.id.rv_experter)
     RecyclerView rv_experter;
     @BindView(R.id.refreshLayout)
@@ -74,6 +76,7 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
         rv_experter.setNestedScrollingEnabled(false);
         rv_experter.setAdapter(adapter);
         btn_search.setOnClickListener(this);
+        btnRegister.setOnClickListener(this);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -163,7 +166,6 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
                     public void onSuccess(String s, Call call, Response response) {
                         types = new Gson().fromJson(s, new TypeToken<List<BaseExperter>>() {
                         }.getType());
-                        Log.i("huqiang", types.size() + "");
                         btn_type.setOnClickListener(ChooseActivity.this);
                     }
                 });
@@ -184,6 +186,9 @@ public class ChooseActivity extends BaseTitleActivity implements View.OnClickLis
             case R.id.btn_search:
                 //搜索
                 refresh(ChooseType.SEARCH);
+                break;
+            case R.id.btn_register:
+                    startActivity(new Intent(ChooseActivity.this,GuideExperterActivity.class).putExtra("isExperter",true));
                 break;
             default:
                 break;

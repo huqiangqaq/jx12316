@@ -34,6 +34,7 @@ public class Detail {
     private String questionId;
     private String asktype;
     private String askId;
+    private String zid;//专家id
 
     public String getResult() {
         return result;
@@ -145,6 +146,14 @@ public class Detail {
 
     public void setTurl(String turl) {
         this.turl = turl;
+    }
+
+    public String getZid() {
+        return zid;
+    }
+
+    public void setZid(String zid) {
+        this.zid = zid;
     }
 
     public static class ZinfoBean {
